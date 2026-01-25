@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuticuti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 280px;
+      max-width: 85%;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 14px 35px rgba(0, 0, 0, 0.75));
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="logo-cuticuti.png" alt="Cuticuti Videos" class="logo">
+
+    <p class="subtitle">
+      Próximamente vídeos que venden de verdad 🚀
+    </p>
+  </div>
+</body>
+</html>
