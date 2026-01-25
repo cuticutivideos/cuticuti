@@ -1,51 +1,82 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CUTICUTI VÍDEOS</title>
 
-  body {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: black;
-    font-family: Arial, sans-serif;
-  }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .video-container {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-  }
+    body {
+      background: #000;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
 
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    /* CONTENEDOR FORMATO INSTAGRAM */
+    .instagram-frame {
+      width: 100%;
+      max-width: 420px;      /* ancho tipo móvil */
+      aspect-ratio: 9 / 16;  /* FORMATO INSTAGRAM */
+      background: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-  /* TEXTO */
-  .overlay {
-    position: fixed;
-    bottom: 8%;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 1.4rem;
-    text-shadow: 0 0 20px rgba(0,0,0,0.8);
-  }
-
-  /* 📱 AJUSTE SOLO PARA MÓVIL VERTICAL */
-  @media (max-width: 768px) {
+    /* VÍDEO */
     video {
-      object-fit: contain;
-      transform: scale(0.95);
+      width: 100%;
+      height: 75%;           /* 👈 MÁS PEQUEÑO */
+      object-fit: contain;   /* no corta el logo */
+      background: black;
     }
 
-    .overlay {
-      font-size: 1.2rem;
-      bottom: 6%;
+    /* TEXTO */
+    .texto {
+      margin-top: 20px;
+      color: white;
+      text-align: center;
+      font-size: 1.1rem;
+      opacity: 0.9;
     }
-  }
-</style>
+
+    /* DESKTOP */
+    @media (min-width: 1024px) {
+      .instagram-frame {
+        max-width: 500px;
+      }
+
+      video {
+        height: 70%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="instagram-frame">
+    <video autoplay muted loop playsinline>
+      <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
+      Tu navegador no soporta vídeo.
+    </video>
+
+    <div class="texto">
+      Próximamente vídeos que venden de verdad 🚀
+    </div>
+  </div>
+
+</body>
+</html>
