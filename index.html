@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CUTICUTI VÍDEOS</title>
+  <title>Cuticuti</title>
 
   <style>
     * {
@@ -19,51 +19,122 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
     }
 
-    .video-wrapper {
+    .container {
       width: 100%;
-      max-width: 420px; /* CLAVE: tamaño ideal tipo Instagram */
-      margin-top: 80px;
+      max-width: 420px;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    /* VIDEO */
+    .video-box {
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 0 40px rgba(160, 90, 255, 0.35);
+      margin-bottom: 40px;
     }
 
     video {
       width: 100%;
-      height: auto;
       display: block;
     }
 
-    .texto {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 1.2rem;
-      opacity: 0.9;
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
     }
 
-    @media (min-width: 768px) {
-      .video-wrapper {
-        max-width: 520px;
-      }
+    .sub {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin-bottom: 40px;
+    }
+
+    /* COMO FUNCIONA */
+    .steps {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    .step {
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    /* PRECIO */
+    .price {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .price span {
+      font-weight: bold;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 30px;
+    }
+
+    /* BOTON */
+    .cta {
+      background: #fff;
+      color: #000;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-sub {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="video-wrapper">
-    <video autoplay muted loop playsinline>
-      <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
-      Tu navegador no soporta vídeo.
-    </video>
-  </div>
+  <div class="container">
 
-  <div class="texto">
-    Próximamente vídeos que venden de verdad 🚀
+    <!-- VIDEO -->
+    <div class="video-box">
+      <video autoplay loop muted playsinline>
+        <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- TEXTO PRINCIPAL -->
+    <h1>Crea vídeos e imágenes con actores IA</h1>
+    <div class="sub">Sin grabarte. Sin editar. Listos para vender.</div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="steps">
+      <div class="step">1️⃣ Elige un actor IA</div>
+      <div class="step">2️⃣ Escribe lo que quieres decir</div>
+      <div class="step">3️⃣ Descarga tu vídeo</div>
+    </div>
+
+    <!-- PRECIO -->
+    <div class="price">
+      6 vídeos por <span>6,99 € / semana</span>
+    </div>
+    <div class="note">
+      Sin permanencia · Cancela cuando quieras
+    </div>
+
+    <!-- CTA -->
+    <a href="#" class="cta">Probar gratis mi primer vídeo</a>
+    <div class="cta-sub">
+      No hace falta tarjeta
+    </div>
+
   </div>
 
 </body>
