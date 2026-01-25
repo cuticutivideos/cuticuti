@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cuticuti Vídeos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CUTICUTI VÍDEOS</title>
 
   <style>
     * {
@@ -13,59 +13,41 @@
     }
 
     body {
-      min-height: 100vh;
       background: #000;
-      font-family: Arial, sans-serif;
-      color: white;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
     }
 
-    /* CONTENEDOR GENERAL */
-    .wrapper {
+    .video-wrapper {
       width: 100%;
-      max-width: 420px; /* CLAVE: tamaño Instagram */
-      padding-top: 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* CAJA DEL VIDEO */
-    .video-box {
-      width: 100%;
-      aspect-ratio: 16 / 9;
+      max-width: 420px; /* CLAVE: tamaño ideal tipo Instagram */
+      margin-top: 80px;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 0 35px rgba(140, 90, 255, 0.45);
-      background: #000;
+      box-shadow: 0 0 40px rgba(160, 90, 255, 0.35);
     }
 
     video {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
-    /* TEXTO */
     .texto {
-      margin: 28px 20px 0;
+      margin-top: 40px;
       text-align: center;
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       opacity: 0.9;
     }
 
-    /* ORDENADOR */
-    @media (min-width: 900px) {
-      .wrapper {
-        max-width: 720px;
-        padding-top: 60px;
-      }
-
-      .texto {
-        font-size: 1.15rem;
+    @media (min-width: 768px) {
+      .video-wrapper {
+        max-width: 520px;
       }
     }
   </style>
@@ -73,17 +55,15 @@
 
 <body>
 
-  <div class="wrapper">
-    <div class="video-box">
-      <video autoplay loop muted playsinline>
-        <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
-        Tu navegador no soporta vídeo.
-      </video>
-    </div>
+  <div class="video-wrapper">
+    <video autoplay muted loop playsinline>
+      <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
+      Tu navegador no soporta vídeo.
+    </video>
+  </div>
 
-    <div class="texto">
-      Próximamente vídeos que venden de verdad 🚀
-    </div>
+  <div class="texto">
+    Próximamente vídeos que venden de verdad 🚀
   </div>
 
 </body>
