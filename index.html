@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Cuticuti Vídeos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     * {
@@ -13,19 +14,27 @@
     }
 
     body {
-      background: black;
-      color: white;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1a1f3c 0%, #000 60%);
       font-family: Arial, sans-serif;
-      text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .video-wrapper {
+    .contenedor-video {
       width: 100%;
       max-width: 900px;
-      margin: 40px auto 20px;
-      border-radius: 20px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .video-box {
+      width: 100%;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 0 40px rgba(140, 90, 255, 0.4);
+      box-shadow: 0 0 45px rgba(140, 90, 255, 0.45);
     }
 
     video {
@@ -35,19 +44,19 @@
     }
 
     .texto {
+      margin: 30px 20px 60px;
+      text-align: center;
       font-size: 1.2rem;
-      opacity: 0.85;
-      margin-bottom: 40px;
+      opacity: 0.9;
     }
 
     @media (max-width: 768px) {
-      .video-wrapper {
-        margin-top: 20px;
+      .contenedor-video {
+        margin-top: 25px;
       }
 
       .texto {
         font-size: 1.05rem;
-        padding: 0 20px;
       }
     }
   </style>
@@ -55,16 +64,18 @@
 
 <body>
 
-  <div class="video-wrapper">
-    <video autoplay loop muted playsinline>
-      <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
-      Tu navegador no soporta vídeo.
-    </video>
+  <div class="contenedor-video">
+    <div class="video-box">
+      <video autoplay loop muted playsinline>
+        <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
+        Tu navegador no soporta vídeo.
+      </video>
+    </div>
   </div>
 
-  <p class="texto">
+  <div class="texto">
     Próximamente vídeos que venden de verdad 🚀
-  </p>
+  </div>
 
 </body>
 </html>
