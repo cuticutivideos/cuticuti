@@ -2,57 +2,65 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>CUTICUTI VÍDEOS</title>
+  <title>Cuticuti Videos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
+      margin: 0;
       min-height: 100vh;
-      background: radial-gradient(circle at top, #1a1f3c, #000);
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #1a1f3a, #000);
+      color: white;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: white;
       text-align: center;
     }
 
-    .container {
-      padding: 20px;
-    }
-
     .logo {
-      max-width: 360px;
-      width: 95%;
-      margin: 0 auto 40px;
-      display: block;
-      filter: drop-shadow(0 0 30px rgba(160,120,255,0.7));
+      max-width: 90%;
+      width: 600px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 40px rgba(140, 120, 255, 0.35);
+      border-radius: 8px;
     }
 
-    p {
-      font-size: 1.1rem;
-      opacity: 0.85;
+    video {
+      max-width: 90%;
+      width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(140, 120, 255, 0.35);
+      margin-bottom: 30px;
+    }
+
+    .texto {
+      font-size: 1.3rem;
+      opacity: 0.9;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <img 
-      src="5A19289F-FCBF-4522-A473-722382D594E9.png" 
-      alt="CUTICUTI VÍDEOS" 
-      class="logo"
-    >
+  <!-- LOGO -->
+  <img 
+    src="5A19289F-FCBF-4522-A473-722382D594E9.png" 
+    alt="Cuticuti Videos" 
+    class="logo"
+  >
 
-    <p>Próximamente vídeos que venden de verdad 🚀</p>
+  <!-- VIDEO -->
+  <video autoplay muted loop playsinline>
+    <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/quicktime">
+    Tu navegador no soporta vídeo.
+  </video>
 
+  <!-- TEXTO -->
+  <div class="texto">
+    Próximamente vídeos que venden de verdad 🚀
   </div>
+
 </body>
 </html>
