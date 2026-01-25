@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <title>Cuticuti Vídeos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CUTICUTI VÍDEOS</title>
 
   <style>
     * {
@@ -13,53 +13,41 @@
     }
 
     body {
-      background: #000;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-    }
-
-    /* CONTENEDOR FORMATO INSTAGRAM */
-    .instagram-frame {
-      width: 100%;
-      max-width: 420px;      /* ancho tipo móvil */
-      aspect-ratio: 9 / 16;  /* FORMATO INSTAGRAM */
       background: black;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
 
-    /* VÍDEO */
+    .video-wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto 20px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(140, 90, 255, 0.4);
+    }
+
     video {
       width: 100%;
-      height: 75%;           /* 👈 MÁS PEQUEÑO */
-      object-fit: contain;   /* no corta el logo */
-      background: black;
+      height: auto;
+      display: block;
     }
 
-    /* TEXTO */
     .texto {
-      margin-top: 20px;
-      color: white;
-      text-align: center;
-      font-size: 1.1rem;
-      opacity: 0.9;
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-bottom: 40px;
     }
 
-    /* DESKTOP */
-    @media (min-width: 1024px) {
-      .instagram-frame {
-        max-width: 500px;
+    @media (max-width: 768px) {
+      .video-wrapper {
+        margin-top: 20px;
       }
 
-      video {
-        height: 70%;
+      .texto {
+        font-size: 1.05rem;
+        padding: 0 20px;
       }
     }
   </style>
@@ -67,16 +55,16 @@
 
 <body>
 
-  <div class="instagram-frame">
-    <video autoplay muted loop playsinline>
+  <div class="video-wrapper">
+    <video autoplay loop muted playsinline>
       <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
       Tu navegador no soporta vídeo.
     </video>
-
-    <div class="texto">
-      Próximamente vídeos que venden de verdad 🚀
-    </div>
   </div>
+
+  <p class="texto">
+    Próximamente vídeos que venden de verdad 🚀
+  </p>
 
 </body>
 </html>
