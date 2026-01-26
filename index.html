@@ -10,187 +10,169 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
       background: #000;
       color: #fff;
-      line-height: 1.4;
     }
 
-    section {
-      padding: 48px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: 42px;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    h2 {
-      font-size: 32px;
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    p {
-      opacity: 0.85;
-      text-align: center;
-    }
-
-    /* HERO */
-    .hero-video {
+    /* HERO VIDEO */
+    .hero {
+      position: relative;
       width: 100%;
-      max-width: 900px;
-      margin: 40px auto;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .hero-video video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* STEPS */
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-      margin-top: 32px;
-    }
-
-    .step {
-      background: #111;
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-size: 14px;
-    }
-
-    /* PRICING */
-    .pricing {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .plan {
-      border: 1px solid #222;
-      border-radius: 20px;
-      padding: 28px;
-      background: #0d0d0d;
-    }
-
-    .plan.highlight {
-      border-color: #fff;
-    }
-
-    .plan h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .price {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .plan ul {
-      list-style: none;
-      margin: 16px 0;
-      padding: 0;
-    }
-
-    .plan li {
-      margin-bottom: 8px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 14px;
-      border-radius: 999px;
-      background: #fff;
-      color: #000;
-      font-weight: 600;
-      text-decoration: none;
-      margin-top: 16px;
-    }
-
-    /* AVATARS */
-    .avatars {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .avatar-card {
-      background: #0d0d0d;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid #222;
-    }
-
-    .avatar-media {
-      width: 100%;
-      height: 300px;
+      height: 70vh;
       overflow: hidden;
     }
 
-    .avatar-media img {
+    .hero video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .avatar-content {
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      opacity: 0.85;
+      max-width: 500px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* PRICING */
+    .pricing {
+      display: grid;
+      gap: 24px;
+    }
+
+    .plan {
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      background: #0b0b0b;
+    }
+
+    .plan strong {
+      font-size: 1.4rem;
+    }
+
+    .plan ul {
+      list-style: none;
+      margin: 16px 0;
+      opacity: 0.9;
+    }
+
+    .plan li {
+      margin-bottom: 6px;
+    }
+
+    .plan button {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* AVATARS */
+    .avatars {
+      display: grid;
+      gap: 24px;
+    }
+
+    .avatar-card {
+      background: #0b0b0b;
+      border: 1px solid #222;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .avatar-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .avatar-info {
       padding: 20px;
       text-align: center;
     }
 
-    .avatar-name {
-      font-size: 22px;
+    .avatar-info h3 {
       margin-bottom: 6px;
     }
 
-    .avatar-role {
-      opacity: 0.8;
-      margin-bottom: 12px;
+    .tags {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 10px 0;
     }
 
-    .avatar-tags span {
-      display: inline-block;
+    .tag {
       background: #1a1a1a;
       padding: 6px 12px;
       border-radius: 999px;
-      font-size: 12px;
-      margin: 0 4px 8px;
+      font-size: 0.8rem;
+      opacity: 0.85;
     }
 
-    .avatar-btn {
-      margin-top: 16px;
-      background: #fff;
-      color: #000;
-      border: none;
-      padding: 14px;
+    .avatar-info button {
+      margin-top: 14px;
       width: 100%;
+      padding: 14px;
       border-radius: 999px;
+      border: none;
       font-weight: 600;
       cursor: pointer;
     }
 
     @media (min-width: 768px) {
-      h1 { font-size: 56px; }
-      .pricing { grid-template-columns: 1fr 1fr; }
+      .pricing {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .avatars {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
 </head>
@@ -198,82 +180,65 @@
 <body>
 
   <!-- HERO -->
-  <section>
-    <div class="hero-video">
-      <video autoplay muted loop playsinline poster="5A19289F-FCBF-4522-A473-722382D594E9.png">
-        <!-- cuando tengas el vídeo real, sustituyes esta línea -->
-        <!-- <source src="cuticuti.mp4" type="video/mp4"> -->
-      </video>
-    </div>
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="/cuticuti-loop.mp4" type="video/mp4">
+    </video>
 
-    <h1>Crea vídeos e imágenes<br>con actores IA</h1>
-    <p>Sin grabarte. Sin editar. Listos para vender.</p>
-
-    <div class="steps">
-      <div class="step">1️⃣ Elige un actor IA</div>
-      <div class="step">2️⃣ Escribe lo que quieres decir</div>
-      <div class="step">3️⃣ Descarga tu vídeo</div>
+    <div class="hero-content">
+      <h1>Crea vídeos e imágenes con actores IA</h1>
+      <p>Sin grabarte. Sin editar. Listos para vender.</p>
     </div>
-  </section>
+  </div>
 
   <!-- PRICING -->
   <section>
-    <h2>Elige cuánto quieres contar</h2>
+    <h2>Planes</h2>
 
     <div class="pricing">
       <div class="plan">
-        <h3>Vídeos rápidos</h3>
-        <div class="price">6,99 € / semana</div>
+        <strong>Vídeos rápidos</strong>
+        <p>6,99 € / semana</p>
         <ul>
-          <li>Hasta 10 segundos por vídeo</li>
+          <li>Hasta 10 segundos</li>
           <li>6 vídeos por semana</li>
-          <li>Formato Instagram (9:16)</li>
-          <li>Actores IA básicos</li>
+          <li>Formato Instagram</li>
         </ul>
-        <a class="btn" href="#">Empezar</a>
+        <button>Empezar</button>
       </div>
 
-      <div class="plan highlight">
-        <h3>⭐ Vídeos que venden</h3>
-        <div class="price">9,99 € / semana</div>
+      <div class="plan">
+        <strong>Vídeos que venden</strong>
+        <p>9,99 € / semana</p>
         <ul>
-          <li>Hasta 20 segundos por vídeo</li>
-          <li>6 vídeos por semana</li>
+          <li>Hasta 20 segundos</li>
           <li>Todos los actores IA</li>
-          <li>Plantillas enfocadas a ventas</li>
+          <li>Plantillas de venta</li>
         </ul>
-        <a class="btn" href="#">Quiero vídeos que venden</a>
+        <button>Quiero vender</button>
       </div>
     </div>
   </section>
 
   <!-- AVATARS -->
   <section>
-    <h2>Elige un actor IA</h2>
+    <h2>Elige tu actor IA</h2>
 
     <div class="avatars">
-
-      <!-- AVATAR 01 -->
+      <!-- AVATAR 1 -->
       <div class="avatar-card">
-        <div class="avatar-media">
-          <img src="avatar-01.jpg" alt="Alex">
-        </div>
-
-        <div class="avatar-content">
-          <div class="avatar-name">Alex</div>
-          <div class="avatar-role">Influencer de ventas</div>
-
-          <div class="avatar-tags">
-            <span>Reels</span>
-            <span>Ads</span>
+        <img src="/alex.jpg" alt="Alex">
+        <div class="avatar-info">
+          <h3>Alex</h3>
+          <p>Influencer de ventas</p>
+          <div class="tags">
+            <span class="tag">Reels</span>
+            <span class="tag">Ads</span>
           </div>
-
           <p>Ideal para ofertas, lanzamientos y llamadas a la acción claras.</p>
-
-          <button class="avatar-btn">Seleccionar</button>
+          <button>Seleccionar</button>
         </div>
       </div>
-
     </div>
   </section>
 
