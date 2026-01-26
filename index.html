@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuticuti</title>
 
   <style>
@@ -10,145 +10,80 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
       background: #000;
       color: #fff;
-      line-height: 1.5;
     }
 
-    h1, h2, h3 {
-      font-weight: 700;
+    /* ===== HERO VIDEO ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+      border-bottom: 1px solid #222;
     }
 
+    .hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-overlay h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-overlay p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    /* ===== SECCIÓN ===== */
     section {
       padding: 60px 20px;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
     }
 
-    /* ===== VIDEO HERO ===== */
-    .hero-video {
-      max-width: 900px;
-      margin: 40px auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 0 40px rgba(255,255,255,0.08);
-    }
-
-    .hero-video video {
-      width: 100%;
-      display: block;
-    }
-
-    .hero {
+    section h2 {
       text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.4rem;
-      margin-top: 30px;
-    }
-
-    .hero p {
-      color: #aaa;
-      margin-top: 12px;
-      font-size: 1.1rem;
-    }
-
-    .steps {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .step {
-      background: #111;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-    }
-
-    /* ===== PLANES ===== */
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 50px;
-    }
-
-    .plan {
-      background: #0e0e0e;
-      border: 1px solid #222;
-      border-radius: 16px;
-      padding: 26px;
-      text-align: center;
-    }
-
-    .plan.highlight {
-      border: 2px solid #fff;
-    }
-
-    .plan h3 {
-      font-size: 1.2rem;
-    }
-
-    .price {
+      margin-bottom: 40px;
       font-size: 2rem;
-      margin: 12px 0;
-    }
-
-    .plan ul {
-      list-style: none;
-      color: #ccc;
-      margin: 20px 0;
-      text-align: left;
-    }
-
-    .plan ul li {
-      margin-bottom: 8px;
-    }
-
-    .plan button {
-      background: #fff;
-      color: #000;
-      border: none;
-      border-radius: 999px;
-      padding: 14px 22px;
-      font-size: 1rem;
-      cursor: pointer;
-      width: 100%;
     }
 
     /* ===== AVATARES ===== */
     .avatars {
-      margin-top: 80px;
-    }
-
-    .avatars h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .avatar-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
     }
 
     .avatar-card {
-      background: #0f0f0f;
+      background: #111;
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid #222;
-      text-align: center;
     }
 
     .avatar-media {
+      width: 100%;
       height: 280px;
       overflow: hidden;
     }
@@ -157,20 +92,22 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .avatar-content {
       padding: 18px;
+      text-align: center;
     }
 
-    .avatar-name {
-      font-size: 1.1rem;
-      margin-bottom: 4px;
+    .avatar-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
     }
 
     .avatar-role {
-      color: #aaa;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      opacity: 0.7;
       margin-bottom: 10px;
     }
 
@@ -179,7 +116,6 @@
       justify-content: center;
       gap: 8px;
       margin-bottom: 12px;
-      flex-wrap: wrap;
     }
 
     .avatar-tags span {
@@ -190,8 +126,8 @@
     }
 
     .avatar-desc {
-      font-size: 0.85rem;
-      color: #ccc;
+      font-size: 0.9rem;
+      opacity: 0.8;
       margin-bottom: 16px;
     }
 
@@ -200,79 +136,49 @@
       color: #000;
       border: none;
       padding: 12px 18px;
-      border-radius: 999px;
+      border-radius: 12px;
+      font-weight: 600;
       cursor: pointer;
       width: 100%;
-      font-size: 0.95rem;
+    }
+
+    .avatar-btn:hover {
+      background: #eaeaea;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-video">
-      <video autoplay muted loop playsinline>
-        <source src="cuticuti.mp4" type="video/mp4">
-      </video>
+  <!-- ===== HERO CON VIDEO ===== -->
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="cuticuti.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay">
+      <h1>Crea vídeos e imágenes con actores IA</h1>
+      <p>Sin grabarte. Sin editar. Listos para vender.</p>
     </div>
+  </div>
 
-    <h1>Crea vídeos e imágenes con actores IA</h1>
-    <p>Sin grabarte. Sin editar. Listos para vender.</p>
-
-    <div class="steps">
-      <div class="step">1️⃣ Elige un actor IA</div>
-      <div class="step">2️⃣ Escribe lo que quieres decir</div>
-      <div class="step">3️⃣ Descarga tu vídeo</div>
-    </div>
-  </section>
-
-  <!-- PLANES -->
+  <!-- ===== AVATARES ===== -->
   <section>
-    <div class="plans">
-      <div class="plan">
-        <h3>Vídeos rápidos</h3>
-        <div class="price">6,99 € / semana</div>
-        <ul>
-          <li>• Hasta 10 segundos</li>
-          <li>• 6 vídeos por semana</li>
-          <li>• Formato Instagram (9:16)</li>
-          <li>• Actores IA básicos</li>
-        </ul>
-        <button>Empezar</button>
-      </div>
+    <h2>Elige un actor IA</h2>
 
-      <div class="plan highlight">
-        <h3>⭐ Vídeos que venden</h3>
-        <div class="price">9,99 € / semana</div>
-        <ul>
-          <li>• Hasta 20 segundos</li>
-          <li>• 6 vídeos por semana</li>
-          <li>• Todos los actores IA</li>
-          <li>• Plantillas de venta</li>
-        </ul>
-        <button>Quiero vídeos que venden</button>
-      </div>
-    </div>
-  </section>
+    <div class="avatars">
 
-  <!-- AVATARES -->
-  <section class="avatars">
-    <h2>Elige tu actor IA</h2>
-
-    <div class="avatar-grid">
-
-      <!-- ALEX -->
+      <!-- AVATAR 1 -->
       <div class="avatar-card">
         <div class="avatar-media">
           <img src="alex.jpg" alt="Alex">
         </div>
         <div class="avatar-content">
-          <div class="avatar-name">Alex</div>
+          <h3>Alex</h3>
           <div class="avatar-role">Influencer de ventas</div>
           <div class="avatar-tags">
-            <span>Reels</span><span>Ads</span>
+            <span>Reels</span>
+            <span>Ads</span>
           </div>
           <div class="avatar-desc">
             Ideal para ofertas, lanzamientos y llamadas a la acción claras.
@@ -281,43 +187,27 @@
         </div>
       </div>
 
-      <!-- MARCO -->
+      <!-- AVATAR 2 -->
       <div class="avatar-card">
         <div class="avatar-media">
           <img src="marco.jpg" alt="Marco">
         </div>
         <div class="avatar-content">
-          <div class="avatar-name">Marco</div>
+          <h3>Marco</h3>
           <div class="avatar-role">Actor estilo anuncio TV</div>
           <div class="avatar-tags">
-            <span>Marca</span><span>Premium</span>
+            <span>Marca</span>
+            <span>Premium</span>
           </div>
           <div class="avatar-desc">
-            Perfecto para vídeos de marca y campañas profesionales.
+            Perfecto para campañas profesionales y vídeos de marca.
           </div>
           <button class="avatar-btn">Seleccionar</button>
         </div>
       </div>
 
-      <!-- LUCAS -->
-      <div class="avatar-card">
-        <div class="avatar-media">
-          <img src="lucas.jpg" alt="Lucas">
-        </div>
-        <div class="avatar-content">
-          <div class="avatar-name">Lucas</div>
-          <div class="avatar-role">Narrador neutro</div>
-          <div class="avatar-tags">
-            <span>Corporativo</span>
-          </div>
-          <div class="avatar-desc">
-            Ideal para explicar servicios y mensajes claros.
-          </div>
-          <button class="avatar-btn">Seleccionar</button>
-        </div>
-      </div>
-
-      <!-- AQUÍ DUPLICAS HASTA 20 -->
+      <!-- AQUÍ AÑADIREMOS LOS OTROS 18 -->
+      
     </div>
   </section>
 
