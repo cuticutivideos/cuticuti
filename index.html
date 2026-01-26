@@ -3,43 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cuticuti – Avatares IA</title>
+  <title>Cuticuti</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
       background: #000;
       color: #fff;
+      line-height: 1.5;
     }
 
-    .avatars-section {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 16px;
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .steps {
+      margin: 30px 0;
+    }
+
+    .steps div {
+      margin: 6px 0;
+    }
+
+    .cta {
+      background: #fff;
+      color: #000;
+      padding: 14px 24px;
+      border-radius: 14px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* ===== PLANES ===== */
+    .plans {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
       display: grid;
+      gap: 30px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .plan {
+      border: 1px solid #222;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .plan h3 {
+      margin-bottom: 10px;
+    }
+
+    .plan .price {
+      font-size: 28px;
+      margin: 14px 0;
+    }
+
+    /* ===== AVATARES ===== */
+    .avatars {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+      display: grid;
       gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .avatar-card {
       background: #111;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid #222;
-      display: flex;
-      flex-direction: column;
       text-align: center;
     }
 
     .avatar-media {
-      width: 100%;
-      height: 280px;
+      height: 320px;
       overflow: hidden;
     }
 
@@ -51,164 +116,133 @@
     }
 
     .avatar-content {
-      padding: 16px;
+      padding: 20px;
     }
 
     .avatar-name {
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 22px;
       margin-bottom: 6px;
     }
 
     .avatar-role {
-      font-size: 14px;
       color: #aaa;
       margin-bottom: 10px;
     }
 
-    .avatar-tags {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
     .avatar-tags span {
       background: #222;
-      padding: 4px 10px;
-      border-radius: 12px;
+      padding: 6px 12px;
+      border-radius: 20px;
       font-size: 12px;
+      margin: 4px;
+      display: inline-block;
     }
 
     .avatar-desc {
-      font-size: 14px;
       color: #ccc;
-      margin-bottom: 14px;
+      font-size: 14px;
+      margin: 14px 0 20px;
     }
 
     .avatar-btn {
       background: #fff;
       color: #000;
       border: none;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 600;
       cursor: pointer;
     }
 
-    .avatar-btn:hover {
-      opacity: 0.9;
+    /* ===== FAQ ===== */
+    .faq {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .faq h2 {
+      margin-bottom: 20px;
+    }
+
+    .faq p {
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
     }
   </style>
 </head>
 
 <body>
 
-<section class="avatars-section">
+  <!-- HERO -->
+  <section class="hero">
+    <img src="cuticuti.jpg" alt="Cuticuti">
+    <h1>Crea vídeos e imágenes con actores IA</h1>
+    <p>Sin grabarte. Sin editar. Listos para vender.</p>
 
-  <!-- AVATAR 1 -->
-  <div class="avatar-card">
-    <div class="avatar-media">
-      <img src="avatar1.jpg" alt="Alex">
+    <div class="steps">
+      <div>1️⃣ Elige un actor IA</div>
+      <div>2️⃣ Escribe lo que quieres decir</div>
+      <div>3️⃣ Descarga tu vídeo</div>
     </div>
-    <div class="avatar-content">
-      <div class="avatar-name">Alex</div>
-      <div class="avatar-role">Influencer de ventas</div>
-      <div class="avatar-tags">
-        <span>Reels</span><span>Ads</span>
+
+    <button class="cta">Probar gratis mi primer vídeo</button>
+  </section>
+
+  <!-- PLANES -->
+  <section class="plans">
+    <div class="plan">
+      <h3>Vídeos rápidos</h3>
+      <div class="price">6,99 € / semana</div>
+      <p>Hasta 10 segundos<br>6 vídeos / semana</p>
+    </div>
+
+    <div class="plan">
+      <h3>⭐ Vídeos que venden</h3>
+      <div class="price">9,99 € / semana</div>
+      <p>Hasta 20 segundos<br>Todos los actores IA</p>
+    </div>
+  </section>
+
+  <!-- AVATARES -->
+  <section class="avatars">
+
+    <div class="avatar-card">
+      <div class="avatar-media">
+        <img src="952D70FB-9066-4673-BFA0-1725E80AB5B6.jpeg" alt="Alex">
       </div>
-      <div class="avatar-desc">Ideal para ofertas, lanzamientos y llamadas a la acción claras.</div>
-      <button class="avatar-btn">Seleccionar</button>
-    </div>
-  </div>
-
-  <!-- AVATAR 2 -->
-  <div class="avatar-card">
-    <div class="avatar-media">
-      <img src="avatar2.jpg" alt="Marco">
-    </div>
-    <div class="avatar-content">
-      <div class="avatar-name">Marco</div>
-      <div class="avatar-role">Actor estilo anuncio TV</div>
-      <div class="avatar-tags">
-        <span>Marca</span><span>Premium</span>
+      <div class="avatar-content">
+        <div class="avatar-name">Alex</div>
+        <div class="avatar-role">Influencer de ventas</div>
+        <div class="avatar-tags">
+          <span>Reels</span>
+          <span>Ads</span>
+        </div>
+        <div class="avatar-desc">
+          Ideal para ofertas, lanzamientos y llamadas a la acción claras.
+        </div>
+        <button class="avatar-btn">Seleccionar</button>
       </div>
-      <div class="avatar-desc">Perfecto para vídeos de marca y campañas profesionales.</div>
-      <button class="avatar-btn">Seleccionar</button>
     </div>
-  </div>
 
-  <!-- AVATAR 3 -->
-  <div class="avatar-card">
-    <div class="avatar-media">
-      <img src="avatar3.jpg" alt="Lucas">
-    </div>
-    <div class="avatar-content">
-      <div class="avatar-name">Lucas</div>
-      <div class="avatar-role">Narrador neutro</div>
-      <div class="avatar-tags">
-        <span>Corporativo</span>
-      </div>
-      <div class="avatar-desc">Ideal para explicar servicios y mensajes claros.</div>
-      <button class="avatar-btn">Seleccionar</button>
-    </div>
-  </div>
+  </section>
 
-  <!-- AVATAR 4 -->
-  <div class="avatar-card">
-    <div class="avatar-media">
-      <img src="avatar4.jpg" alt="Sergio">
-    </div>
-    <div class="avatar-content">
-      <div class="avatar-name">Sergio</div>
-      <div class="avatar-role">Hombre cooperativo</div>
-      <div class="avatar-tags">
-        <span>Confianza</span>
-      </div>
-      <div class="avatar-desc">Transmite cercanía y credibilidad.</div>
-      <button class="avatar-btn">Seleccionar</button>
-    </div>
-  </div>
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <p><strong>¿Necesito saber IA?</strong><br>No. Tú escribes la idea y Cuticuti hace el resto.</p>
+    <p><strong>¿Puedo cancelar?</strong><br>Sí. Sin permanencia.</p>
+  </section>
 
-  <!-- AVATAR 5 -->
-  <div class="avatar-card">
-    <div class="avatar-media">
-      <img src="avatar5.jpg" alt="Dani">
-    </div>
-    <div class="avatar-content">
-      <div class="avatar-name">Dani</div>
-      <div class="avatar-role">Hombre influencer</div>
-      <div class="avatar-tags">
-        <span>Instagram</span>
-      </div>
-      <div class="avatar-desc">Impacta rápido en redes sociales.</div>
-      <button class="avatar-btn">Seleccionar</button>
-    </div>
-  </div>
-
-  <!-- AVATARES 6 AL 20 -->
-  <!-- Duplica este bloque cambiando nombre, rol e imagen -->
-
-  <!-- EJEMPLO -->
-  <div class="avatar-card">
-    <div class="avatar-media">
-      <img src="avatar6.jpg" alt="Clara">
-    </div>
-    <div class="avatar-content">
-      <div class="avatar-name">Clara</div>
-      <div class="avatar-role">Chica TikTok</div>
-      <div class="avatar-tags">
-        <span>TikTok</span><span>Joven</span>
-      </div>
-      <div class="avatar-desc">Estilo fresco y actual para viralidad.</div>
-      <button class="avatar-btn">Seleccionar</button>
-    </div>
-  </div>
-
-  <!-- Del 7 al 20 igual -->
-
-</section>
+  <footer>
+    Cuticuti · Creado con ❤️
+  </footer>
 
 </body>
 </html>
