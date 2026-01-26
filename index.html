@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuticuti</title>
 
   <style>
@@ -10,219 +10,246 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
       background: #000;
       color: #fff;
-    }
-
-    /* ===== HERO VIDEO ===== */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      overflow: hidden;
-      border-bottom: 1px solid #222;
-    }
-
-    .hero video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.2), #000);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
-      align-items: flex-end;
-      padding: 24px;
-      font-size: 22px;
-      font-weight: 600;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* ===== TITLES ===== */
-    .section {
-      padding: 48px 20px;
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 80px 20px 60px;
       text-align: center;
     }
 
-    .section h1 {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .section p {
-      color: #aaa;
-      font-size: 16px;
-    }
-
-    /* ===== AVATARS ===== */
-    .avatars {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px;
-      padding: 40px 20px 80px;
-    }
-
-    .avatar-card {
-      background: #111;
+    /* VIDEO */
+    .video-box {
       border-radius: 18px;
       overflow: hidden;
-      border: 1px solid #222;
+      box-shadow: 0 0 40px rgba(160, 90, 255, 0.35);
+      margin-bottom: 40px;
     }
 
-    .avatar-media {
+    video {
       width: 100%;
-      height: 320px;
-      overflow: hidden;
-    }
-
-    .avatar-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       display: block;
     }
 
-    .avatar-content {
-      padding: 20px;
-      text-align: center;
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
     }
 
-    .avatar-name {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 6px;
+    .sub {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin-bottom: 40px;
     }
 
-    .avatar-role {
-      font-size: 14px;
-      color: #aaa;
-      margin-bottom: 12px;
+    /* COMO FUNCIONA */
+    .steps {
+      text-align: left;
+      margin-bottom: 40px;
     }
 
-    .avatar-tags {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
+    .step {
       margin-bottom: 14px;
+      font-size: 1rem;
     }
 
-    .avatar-tags span {
-      background: #222;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      color: #ccc;
+    /* PRECIO */
+    .price {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
     }
 
-    .avatar-desc {
-      font-size: 14px;
-      color: #bbb;
-      margin-bottom: 16px;
+    .price span {
+      font-weight: bold;
     }
 
-    .avatar-btn {
-      width: 100%;
-      padding: 14px;
+    .note {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-bottom: 30px;
+    }
+
+    /* BOTON */
+    .cta {
       background: #fff;
       color: #000;
-      border: none;
+      padding: 14px 20px;
       border-radius: 12px;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
-      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-sub {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO VIDEO -->
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <!-- CAMBIA EL NOMBRE SI TU VIDEO SE LLAMA DISTINTO -->
-      <source src="cuticuti-video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay">
-      Cuticuti
-    </div>
-  </section>
+  <div class="container">
 
-  <!-- INTRO -->
-  <section class="section">
+    <!-- VIDEO -->
+    <div class="video-box">
+      <video autoplay loop muted playsinline>
+        <source src="_users_8a9e304a-7159-4439-8e3b-be74b1ca5163_generated_1573933b-1ad6-4201-9005-f1f6ff57f799_generated_video_hd.mov" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- TEXTO PRINCIPAL -->
     <h1>Crea vídeos e imágenes con actores IA</h1>
-    <p>Sin grabarte. Sin editar. Listos para vender.</p>
-  </section>
+    <div class="sub">Sin grabarte. Sin editar. Listos para vender.</div>
 
-  <!-- AVATARS -->
-  <section class="section">
-    <h1>Elige tu actor IA</h1>
-  </section>
-
-  <section class="avatars">
-
-    <!-- ALEX -->
-    <div class="avatar-card">
-      <div class="avatar-media">
-        <img src="alex.jpg" alt="Alex">
-      </div>
-      <div class="avatar-content">
-        <div class="avatar-name">Alex</div>
-        <div class="avatar-role">Influencer de ventas</div>
-        <div class="avatar-tags">
-          <span>Reels</span>
-          <span>Ads</span>
-        </div>
-        <div class="avatar-desc">
-          Ideal para ofertas, lanzamientos y llamadas a la acción claras.
-        </div>
-        <button class="avatar-btn">Seleccionar</button>
-      </div>
+    <!-- COMO FUNCIONA -->
+    <div class="steps">
+      <div class="step">1️⃣ Elige un actor IA</div>
+      <div class="step">2️⃣ Escribe lo que quieres decir</div>
+      <div class="step">3️⃣ Descarga tu vídeo</div>
     </div>
 
-    <!-- MARCO -->
-    <div class="avatar-card">
-      <div class="avatar-media">
-        <img src="marco.jpg" alt="Marco">
-      </div>
-      <div class="avatar-content">
-        <div class="avatar-name">Marco</div>
-        <div class="avatar-role">Actor estilo anuncio TV</div>
-        <div class="avatar-tags">
-          <span>Marca</span>
-          <span>Premium</span>
-        </div>
-        <div class="avatar-desc">
-          Perfecto para campañas profesionales y branding.
-        </div>
-        <button class="avatar-btn">Seleccionar</button>
-      </div>
+    <!-- PRECIO -->
+    <div class="price">
+      6 vídeos por <span>6,99 € / semana</span>
+    </div>
+    <div class="note">
+      Sin permanencia · Cancela cuando quieras
     </div>
 
-    <!-- LUCAS -->
-    <div class="avatar-card">
-      <div class="avatar-media">
-        <img src="lucas.jpg" alt="Lucas">
-      </div>
-      <div class="avatar-content">
-        <div class="avatar-name">Lucas</div>
-        <div class="avatar-role">Narrador neutro</div>
-        <div class="avatar-tags">
-          <span>Corporativo</span>
-        </div>
-        <div class="avatar-desc">
-          Ideal para explicar servicios y mensajes claros.
-        </div>
-        <button class="avatar-btn">Seleccionar</button>
-      </div>
+    <!-- CTA -->
+    <a href="#" class="cta">Probar gratis mi primer vídeo</a>
+    <div class="cta-sub">
+      No hace falta tarjeta
     </div>
 
-  </section>
+  </div>
 
 </body>
-</html>
+</html><!-- PRECIOS -->
+<div style="width:100%; max-width:420px; margin:60px auto; padding:0 20px; text-align:center;">
+
+  <h2 style="font-size:1.6rem; margin-bottom:10px;">
+    Elige cómo quieres vender
+  </h2>
+
+  <p style="opacity:0.8; margin-bottom:40px;">
+    Empieza hoy. Cancela cuando quieras.
+  </p>
+
+  <!-- PLAN BASICO -->
+  <div style="border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:24px; margin-bottom:24px;">
+    <h3>Vídeos rápidos</h3>
+    <p style="font-size:1.4rem; margin:10px 0;">6,99 € / semana</p>
+    <p style="opacity:0.8; margin-bottom:20px;">
+      Impacta en segundos.<br>
+      Perfecto para Reels y Stories.
+    </p>
+    <a href="#" style="display:block; background:#222; color:#fff; padding:12px; border-radius:10px; text-decoration:none;">
+      Empezar con vídeos rápidos
+    </a>
+  </div>
+
+  <!-- PLAN PRO -->
+  <div style="border:2px solid #fff; border-radius:16px; padding:24px;">
+    <h3>⭐ Vídeos que venden</h3>
+    <p style="font-size:1.6rem; margin:10px 0;">9,99 € / semana</p>
+    <p style="opacity:0.9; margin-bottom:10px;">
+      Más tiempo.<br>
+      Más mensaje.<br>
+      Más ventas.
+    </p>
+    <p style="font-size:0.9rem; opacity:0.7; margin-bottom:20px;">
+      La mayoría de negocios eligen este plan
+    </p>
+    <a href="#" style="display:block; background:#fff; color:#000; padding:14px; border-radius:10px; text-decoration:none; font-weight:600;">
+      Quiero vídeos que venden
+    </a>
+  </div>
+
+  <p style="margin-top:20px; font-size:0.85rem; opacity:0.6;">
+    Sin permanencia · Cancela cuando quieras
+  </p>
+
+</div><!-- PRECIOS -->
+<div style="width:100%; max-width:420px; margin:60px auto; padding:0 20px; text-align:center;">
+
+  <h2 style="font-size:1.6rem; margin-bottom:8px;">
+    Elige cuánto quieres contar en tus vídeos
+  </h2>
+
+  <p style="opacity:0.85; margin-bottom:30px;">
+    Más segundos = más mensaje = más ventas
+  </p>
+
+  <!-- PLAN BÁSICO -->
+  <div style="border:1px solid rgba(255,255,255,0.18); border-radius:16px; padding:22px; margin-bottom:22px;">
+    <h3 style="margin-bottom:6px;">Vídeos rápidos</h3>
+    <p style="font-size:1.5rem; margin:6px 0;">6,99 € / semana</p>
+    <p style="margin:10px 0; font-weight:600;">🕒 Hasta 10 segundos por vídeo</p>
+    <p style="opacity:0.85; margin-bottom:18px;">
+      Impacta en segundos.<br>
+      Ideales para Reels y Stories.
+    </p>
+    <ul style="list-style:none; padding:0; margin:0 0 18px; opacity:0.85;">
+      <li>• 6 vídeos por semana</li>
+      <li>• Formato Instagram (9:16)</li>
+      <li>• Actores IA básicos</li>
+    </ul>
+    <a href="#" style="display:block; background:#222; color:#fff; padding:12px; border-radius:10px; text-decoration:none;">
+      Empezar con vídeos rápidos
+    </a>
+  </div>
+
+  <!-- PLAN PRO -->
+  <div style="border:2px solid #fff; border-radius:16px; padding:24px;">
+    <h3 style="margin-bottom:6px;">⭐ Vídeos que venden</h3>
+    <p style="font-size:1.7rem; margin:6px 0;">9,99 € / semana</p>
+    <p style="margin:10px 0; font-weight:700;">🕒 Hasta 20 segundos por vídeo</p>
+    <p style="opacity:0.9; margin-bottom:10px;">
+      Más tiempo para explicar.<br>
+      Más espacio para convencer.<br>
+      Más ventas.
+    </p>
+    <p style="font-size:0.9rem; opacity:0.7; margin-bottom:16px;">
+      🔥 La mayoría de negocios eligen este plan
+    </p>
+    <ul style="list-style:none; padding:0; margin:0 0 18px; opacity:0.9;">
+      <li>• 6 vídeos por semana</li>
+      <li>• Formato Instagram (9:16)</li>
+      <li>• Todos los actores IA</li>
+      <li>• Plantillas enfocadas a ventas</li>
+    </ul>
+    <a href="#" style="display:block; background:#fff; color:#000; padding:14px; border-radius:10px; text-decoration:none; font-weight:700;">
+      Quiero vídeos que venden
+    </a>
+  </div>
+
+  <p style="margin-top:18px; font-size:0.9rem; opacity:0.8;">
+    Sin permanencia · Cancela cuando quieras
+  </p>
+
+</div>
+
+<!-- PROMPT INTELIGENTE -->
+<div style="width:100%; max-width:420px; margin:40px auto 20px; padding:0 20px; text-align:center;">
+  <h3 style="font-size:1.2rem; margin-bottom:8px;">
+    No necesitas saber escribir prompts
+  </h3>
+  <p style="opacity:0.85;">
+    Tú escribes la idea.<br>
+    <strong>Cuticuti crea el prompt perfecto por ti.</strong>
+  </p>
+</div>
