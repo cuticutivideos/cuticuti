@@ -18,8 +18,10 @@ body{
   width:100%;height:100%;
 }
 video{
-  width:100%;height:100%;
-  object-fit:cover;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:black;
 }
 .boton{
   position:absolute;
@@ -55,7 +57,7 @@ video{
 <body>
 
 <div class="video" id="intro">
-  <video autoplay muted loop>
+  <video autoplay muted loop playsinline>
     <source src="video-inicio.mp4.mov">
   </video>
   <button class="boton" onclick="entrar()">Entrar</button>
@@ -67,17 +69,17 @@ video{
 <div class="grid">
 
 <div class="avatar">
-<img src="actores_carlos.el.jefe.38años.PNG">
+<img src="/actores_carlos.el.jefe.38años.PNG">
 <p>Carlos – El jefe</p>
 </div>
 
 <div class="avatar">
-<img src="actores_carlospodscat.PNG">
+<img src="/actores_carlospodscat.PNG">
 <p>Carlos Podcast</p>
 </div>
 
 <div class="avatar">
-<img src="actores_nicolas.chico.joven.podcast.PNG">
+<img src="/actores_nicolas.chico.joven.podcast.PNG">
 <p>Nicolás – joven</p>
 </div>
 
