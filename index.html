@@ -6,199 +6,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 body{
+  margin:0;
   background:#000;
   color:#fff;
-  overflow:hidden;
+  font-family:Arial,Helvetica,sans-serif;
 }
-
-/* INTRO VIDEO */
-.video-intro{
+.video{
   position:fixed;
-  inset:0;
-  background:black;
-  z-index:10;
+  top:0;left:0;
+  width:100%;height:100%;
 }
-
-.video-intro video{
-  width:100%;
-  height:100%;
-  object-fit:contain;
+video{
+  width:100%;height:100%;
+  object-fit:cover;
 }
-
-/* BOTÓN ENTRAR */
-.boton-entrar{
+.boton{
   position:absolute;
-  bottom:120px;
+  bottom:40px;
   left:50%;
-  transform:translateX(-50%) scale(0.9);
-  padding:14px 40px;
-  background:rgba(0,0,0,0.6);
-  border:2px solid white;
-  color:white;
+  transform:translateX(-50%);
+  padding:14px 30px;
+  border:2px solid #fff;
+  background:rgba(0,0,0,.6);
+  color:#fff;
   font-size:18px;
-  cursor:pointer;
-  opacity:0;
-  transition:all 0.6s ease;
 }
-
-.boton-entrar.visible{
-  opacity:1;
-  transform:translateX(-50%) scale(1);
-}
-
-/* BOTÓN SONIDO */
-.sonido{
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-size:26px;
-  cursor:pointer;
-  background:rgba(0,0,0,0.5);
-  padding:10px;
-  border-radius:50%;
-  user-select:none;
-}
-
-/* APP */
-.app{
-  display:none;
-  padding:30px;
-  overflow-y:auto;
-  height:100vh;
-}
-
-h1{
-  text-align:center;
-  margin-bottom:25px;
-}
-
+.app{display:none;padding:20px}
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:15px;
 }
-
 .avatar{
-  background:#151515;
-  border-radius:14px;
+  background:#111;
+  border-radius:12px;
   overflow:hidden;
   text-align:center;
 }
-
 .avatar img{
   width:100%;
   height:220px;
   object-fit:cover;
-}
-
-.avatar span{
-  display:block;
-  padding:10px;
-  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div class="video-intro" id="intro">
-  <video id="videoIntro" muted playsinline>
+<div class="video" id="intro">
+  <video autoplay muted loop>
     <source src="video-inicio.mp4.mov">
   </video>
-
-  <div class="sonido" id="btnSonido">🔇</div>
-  <button class="boton-entrar" id="btnEntrar" onclick="entrar()">Entrar</button>
+  <button class="boton" onclick="entrar()">Entrar</button>
 </div>
 
-<!-- APP -->
 <div class="app" id="app">
-  <h1>Avatares Cuticuti</h1>
+<h2>Elige tu actor IA</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <!-- EJEMPLOS (añade todos los que ya tienes) -->
-    <div class="avatar">
-      <img src="actores:alba.rubia.atractiva.PNG">
-      <span>Alba · rubia atractiva</span>
-    </div>
+<div class="avatar">
+<img src="actores_carlos.el.jefe.38años.PNG">
+<p>Carlos – El jefe</p>
+</div>
 
-    <div class="avatar">
-      <img src="actores:carlos.el.jefe.38años.PNG">
-      <span>Carlos · el jefe</span>
-    </div>
+<div class="avatar">
+<img src="actores_carlospodscat.PNG">
+<p>Carlos Podcast</p>
+</div>
 
-    <!-- SIGUE CON EL RESTO TAL CUAL LOS TIENES -->
-    
-  </div>
+<div class="avatar">
+<img src="actores_nicolas.chico.joven.podcast.PNG">
+<p>Nicolás – joven</p>
+</div>
+
+</div>
 </div>
 
 <script>
-const video = document.getElementById("videoIntro");
-const btnEntrar = document.getElementById("btnEntrar");
-const btnSonido = document.getElementById("btnSonido");
-
-video.play();
-
-// Mostrar botón al terminar el vídeo
-video.addEventListener("ended", () => {
-  btnEntrar.classList.add("visible");
-});
-
-// Sonido ON / OFF
-btnSonido.addEventListener("click", () => {
-  video.muted = !video.muted;
-  btnSonido.textContent = video.muted ? "🔇" : "🔊";
-});
-
 function entrar(){
-  document.getElementById("intro").style.display="none";
-  document.getElementById("app").style.display="block";
-  document.body.style.overflow="auto";
+ document.getElementById("intro").style.display="none";
+ document.getElementById("app").style.display="block";
 }
 </script>
 
 </body>
-<h2 style="text-align:center; margin:40px 0;">Elige tu actor IA</h2>
-
-<div class="grid">
-
-  <div class="avatar">
-    <img src="actores-alba-rubia-atractiva.png">
-    <span>Alba · Rubia atractiva</span>
-  </div>
-
-  <div class="avatar">
-    <img src="actores-carlos-el-jefe-38.png">
-    <span>Carlos · El jefe (38)</span>
-  </div>
-
-  <div class="avatar">
-    <img src="actores-marta-34.png">
-    <span>Marta · 34 años</span>
-  </div>
-
-  <div class="avatar">
-    <img src="actores-eduardo-moreno-atractivo.png">
-    <span>Eduardo · Atractivo</span>
-  </div>
-
-  <div class="avatar">
-    <img src="actores-german-calvo.png">
-    <span>Germán · Calvo</span>
-  </div>
-
-  <div class="avatar">
-    <img src="actores-sonia-rubia-elegante.png">
-    <span>Sonia · Elegante</span>
-  </div>
-
-</div>
+</html>
