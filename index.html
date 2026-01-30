@@ -2,9 +2,10 @@
 <html lang="es">
 <head>
 <head>
+  <head>
   <meta charset="UTF-8">
   <title>CUTICUTI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body{
@@ -15,17 +16,18 @@
     }
 
     h2{
-      padding:15px;
-      margin:0;
+      margin:20px 15px 10px;
     }
 
+    /* GRID SIEMPRE 2 COLUMNAS */
     .grid{
       display:grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:15px;
-      padding:15px;
+      padding:0 15px 20px;
     }
 
+    /* TARJETA */
     .avatar{
       background:#111;
       border-radius:12px;
@@ -33,6 +35,7 @@
       text-align:center;
     }
 
+    /* IMAGEN */
     .avatar img{
       width:100%;
       height:260px;
@@ -40,15 +43,14 @@
       display:block;
     }
 
+    /* TEXTO */
     .avatar p{
       margin:0;
       padding:12px;
       background:rgba(0,0,0,.7);
     }
-</style>
-}
+  </style>
 </head>
-
 <body>
 
 <div class="video" id="intro">
