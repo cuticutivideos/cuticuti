@@ -10,15 +10,10 @@ body{
   margin:0;
   background:#000;
   color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-h2{
-  margin:25px 10px 10px;
-  font-size:22px;
-}
-
-/* VIDEO INTRO */
+/* INTRO VIDEO */
 .video{
   position:fixed;
   inset:0;
@@ -28,37 +23,34 @@ h2{
 }
 
 .video video{
-  position:absolute;
-  top:50%;
-  left:50%;
-  min-width:100%;
-  min-height:100%;
-  width:auto;
-  height:auto;
-  transform:translate(-50%,-50%);
+  width:100%;
+  height:100%;
   object-fit:cover;
 }
 
 .boton{
   position:absolute;
-  bottom:40px;
+  bottom:60px;
   left:50%;
   transform:translateX(-50%);
-  padding:14px 30px;
+  padding:16px 36px;
   border:2px solid #fff;
   background:rgba(0,0,0,.6);
   color:#fff;
   font-size:18px;
-  cursor:pointer;
-  z-index:20;
 }
 
+/* APP */
 .app{
   display:none;
-  padding-bottom:40px;
+  padding-bottom:60px;
 }
 
-/* GRID 2 COLUMNAS */
+h2{
+  margin:30px 15px 10px;
+}
+
+/* GRID 2 COLS */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -68,9 +60,8 @@ h2{
 
 .avatar{
   background:#111;
-  border-radius:12px;
+  border-radius:14px;
   overflow:hidden;
-  text-align:center;
 }
 
 .avatar img{
@@ -82,8 +73,8 @@ h2{
 .avatar p{
   margin:0;
   padding:10px;
+  text-align:center;
   background:rgba(0,0,0,.7);
-  font-size:14px;
 }
 </style>
 </head>
@@ -93,43 +84,64 @@ h2{
 <!-- INTRO -->
 <div class="video" id="intro">
   <video autoplay muted loop playsinline>
-    <source src="video-inicio.mp4.mov" type="video/mp4">
+    <source src="Video_inicio_cuti.MP4" type="video/mp4">
   </video>
-
   <button class="boton" onclick="entrar()">Entrar</button>
 </div>
 
 <!-- APP -->
 <div class="app" id="app">
 
-<h2>Influencers</h2>
+<h2>Personajes</h2>
 <div class="grid">
-  <div class="avatar"><img src="img/avatares/actores_marcos_influencer.jpg"><p>Marcos – influencer</p></div>
-  <div class="avatar"><img src="img/avatares/actores_kevin_influencer.jpg"><p>Kevin – influencer</p></div>
-  <div class="avatar"><img src="img/avatares/Actores_sonia_influencer.jpg"><p>Sonia – influencer</p></div>
-  <div class="avatar"><img src="img/avatares/actores_german_calvo_simpatico_influencer.PNG"><p>Germán – influencer</p></div>
+  <div class="avatar">
+    <img src="imagen/avatars/carlos-jefe.PNG">
+    <p>Carlos – El jefe</p>
+  </div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_mario_18anos.PNG">
+    <p>Mario – 18 años</p>
+  </div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_miriam_18anos.PNG">
+    <p>Miriam – 18 años</p>
+  </div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_sergio_tatuajes_atractivo.PNG">
+    <p>Sergio – tatuajes</p>
+  </div>
 </div>
 
 <h2>Podcast</h2>
 <div class="grid">
-  <div class="avatar"><img src="img/avatares/actores_laura_podcast_18anos.PNG"><p>Laura – podcast</p></div>
-  <div class="avatar"><img src="img/avatares/actores_maria_guapa_simpatica_podcast.PNG"><p>María – podcast</p></div>
-  <div class="avatar"><img src="img/avatares/actores_nicolas.chico.joven.podcast.PNG"><p>Nicolás – podcast</p></div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_laura_podcast_18anos.PNG">
+    <p>Laura – podcast</p>
+  </div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_maria_guapa_simpatica_podcast.PNG">
+    <p>María – podcast</p>
+  </div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_nicolas.chico.joven.podcast.PNG">
+    <p>Nicolás – podcast</p>
+  </div>
 </div>
 
 <h2>Periodistas</h2>
 <div class="grid">
-  <div class="avatar"><img src="img/avatares/actores_ana_periodista.PNG"><p>Ana – periodista</p></div>
-  <div class="avatar"><img src="img/avatares/actores_isabel_periodista.PNG"><p>Isabel – periodista</p></div>
-  <div class="avatar"><img src="img/avatares/actores_eduardo-periodista.jpg"><p>Eduardo – periodista</p></div>
-</div>
-
-<h2>Personajes</h2>
-<div class="grid">
-  <div class="avatar"><img src="img/avatares/carlos-jefe.PNG"><p>Carlos – El jefe</p></div>
-  <div class="avatar"><img src="img/avatares/actores_mario_18anos.PNG"><p>Mario – 18 años</p></div>
-  <div class="avatar"><img src="img/avatares/actores_miriam_18anos.PNG"><p>Miriam – 18 años</p></div>
-  <div class="avatar"><img src="img/avatares/actores_sergio_tatuajes_atractivo.PNG"><p>Sergio – tatuajes</p></div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_ana_periodista.PNG">
+    <p>Ana – periodista</p>
+  </div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_eduardo-periodista.jpg">
+    <p>Eduardo – periodista</p>
+  </div>
+  <div class="avatar">
+    <img src="imagen/avatars/actores_isabel_periodista.PNG">
+    <p>Isabel – periodista</p>
+  </div>
 </div>
 
 </div>
