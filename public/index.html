@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>CUTICUTI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
+/* RESET */
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   background:#000;
@@ -13,7 +11,16 @@ body{
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* INTRO VIDEO */
+/* TITULOS */
+h2{
+  margin:30px 15px 10px;
+  font-size:22px;
+  font-weight:600;
+}
+
+/* =====================
+   VIDEO INTRO
+===================== */
 .video{
   position:fixed;
   inset:0;
@@ -23,34 +30,39 @@ body{
 }
 
 .video video{
-  width:100%;
-  height:100%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  min-width:100%;
+  min-height:100%;
+  transform:translate(-50%,-50%);
   object-fit:cover;
 }
 
+/* BOTON ENTRAR */
 .boton{
   position:absolute;
-  bottom:60px;
+  bottom:40px;
   left:50%;
   transform:translateX(-50%);
-  padding:16px 36px;
+  padding:14px 34px;
   border:2px solid #fff;
   background:rgba(0,0,0,.6);
   color:#fff;
   font-size:18px;
 }
 
-/* APP */
+/* =====================
+   APP
+===================== */
 .app{
   display:none;
   padding-bottom:60px;
 }
 
-h2{
-  margin:30px 15px 10px;
-}
-
-/* GRID 2 COLS */
+/* =====================
+   GRID 2 COLUMNAS
+===================== */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -58,16 +70,22 @@ h2{
   padding:10px;
 }
 
+/* =====================
+   AVATARES
+===================== */
 .avatar{
   background:#111;
   border-radius:14px;
   overflow:hidden;
+  cursor:pointer;
+  transition:all .2s ease;
 }
 
 .avatar img{
   width:100%;
   height:260px;
   object-fit:cover;
+  display:block;
 }
 
 .avatar p{
@@ -75,8 +93,18 @@ h2{
   padding:10px;
   text-align:center;
   background:rgba(0,0,0,.7);
+  font-size:14px;
 }
-  <style>
+
+/* SELECCION */
+.avatar.selected{
+  outline:3px solid #fff;
+}
+
+.avatar.not-selected{
+  opacity:0.4;
+}
+</style>
   
 </head>
 
@@ -85,10 +113,7 @@ h2{
 <!-- INTRO -->
 <div class="video" id="intro">
   <video autoplay muted loop playsinline>
-    <source src="Video_inicio_cuti.MP4" type="video/mp4">
-  </video>
-  <button class="boton" onclick="entrar()">Entrar</button>
-</div>
+    <source src="Video_inicio_cuti.MP4" type="
 
 <!-- APP -->
 <div class="app" id="app">
