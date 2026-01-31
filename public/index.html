@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>CUTICUTI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
@@ -18,7 +18,7 @@
       font-size: 22px;
     }
 
-    /* VIDEO INTRO */
+    /* VIDEO INTRO: ocupa toda la pantalla y se ajusta (cover) */
     .video {
       position: fixed;
       inset: 0;
@@ -28,8 +28,14 @@
     }
 
     .video video {
-      width: 100vw;
-      height: 100vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
       object-fit: cover;
     }
 
@@ -43,6 +49,8 @@
       background: rgba(0,0,0,.6);
       color: #fff;
       font-size: 18px;
+      z-index: 20;
+      cursor: pointer;
     }
 
     .app {
@@ -50,6 +58,7 @@
       padding-bottom: 40px;
     }
 
+    /* GRID SIEMPRE 2 COLUMNAS */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -77,6 +86,12 @@
       background: rgba(0,0,0,.7);
       font-size: 14px;
     }
+
+    /* pequeños ajustes para móvil */
+    @media (max-width: 480px) {
+      .avatar img { height: 220px; }
+      h2 { font-size: 20px; }
+    }
   </style>
 </head>
 
@@ -84,64 +99,181 @@
 
 <!-- INTRO -->
 <div class="video" id="intro">
+  <!-- Video nuevo: usar exactamente el nombre que subiste al repo -->
   <video autoplay muted loop playsinline>
     <source src="Vídeo_inicio_cuti.MP4" type="video/mp4">
+    <!-- Si quieres un poster de respaldo, puedes añadir: poster="imagen/avatares/carlos-jefe.PNG" -->
   </video>
+
   <button class="boton" onclick="entrar()">Entrar</button>
 </div>
 
 <!-- APP -->
 <div class="app" id="app">
 
-<h2>Elige tu actor IA</h2>
+  <h2>Elige tu actor IA</h2>
 
-<!-- INFLUENCERS -->
-<h2>Influencers</h2>
-<div class="grid">
-  <div class="avatar"><img src="imagen/avatars/Actores_sebastian_playa.jpg"><p>Sebastián – playa</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_monica_influencer.PNG"><p>Mónica – influencer</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_teresa_influencer.PNG"><p>Teresa – influencer</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_paula_influencer.PNG"><p>Paula – influencer</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_triana_influencer.PNG"><p>Triana – influencer</p></div>
-  <div class="avatar"><img src="imagen/avatars/Actores_sonia_influencer.jpg"><p>Sonia – influencer</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_sara_playa.jpg"><p>Sara – playa</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_manuel_seductor.PNG"><p>Manuel – seductor</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_marina_pantera.jpg"><p>Marina – pantera</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_marcos_influencer.jpg"><p>Marcos – influencer</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_miriam_18anos.PNG"><p>Miriam – 18 años</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_german_calvo_simpatico_influencer.PNG"><p>Germán – influencer</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_kevin_influencer.jpg"><p>Kevin – influencer</p></div>
-</div>
+  <!-- INFLUENCERS -->
+  <h2>Influencers</h2>
+  <div class="grid">
+    <div class="avatar">
+      <img src="imagen/avatares/Actores_sebastian_playa.jpg" alt="Sebastián – playa">
+      <p>Sebastián – playa</p>
+    </div>
 
-<!-- PODCAST -->
-<h2>Podcast</h2>
-<div class="grid">
-  <div class="avatar"><img src="imagen/avatars/actores_laura_podcast_18anos.PNG"><p>Laura – podcast</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_maria_guapa_simpatica_podcast.PNG"><p>María – podcast</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_nicolas.chico.joven.podcast.PNG"><p>Nicolás – podcast</p></div>
-</div>
+    <div class="avatar">
+      <img src="imagen/avatares/actores_monica_influencer.PNG" alt="Mónica – influencer">
+      <p>Mónica – influencer</p>
+    </div>
 
-<!-- PERIODISTAS -->
-<h2>Periodistas</h2>
-<div class="grid">
-  <div class="avatar"><img src="imagen/avatars/actores_sonsoles_periodistas.PNG"><p>Sonsoles – periodista</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_ana_periodista.PNG"><p>Ana – periodista</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_isabel_periodista.PNG"><p>Isabel – periodista</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_eduardo-periodista.jpg"><p>Eduardo – periodista</p></div>
-</div>
+    <div class="avatar">
+      <img src="imagen/avatares/actores_teresa_influencer.PNG" alt="Teresa – influencer">
+      <p>Teresa – influencer</p>
+    </div>
 
-<!-- PERSONAJES -->
-<h2>Personajes</h2>
-<div class="grid">
-  <div class="avatar"><img src="imagen/avatars/actores_luna_30anos_elegante.PNG"><p>Luna – elegante</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_mario_18anos.PNG"><p>Mario – 18 años</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_irene_mujer_morena_58anos.PNG"><p>Irene – morena</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_morena_oficina_seductora.PNG"><p>Morena – oficina</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_edurne_rubia_simpatica.PNG"><p>Edurne – simpática</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_diego_playa.jpg"><p>Diego – playa</p></div>
-  <div class="avatar"><img src="imagen/avatars/actores_sergio_tatuajes_atractivo.PNG"><p>Sergio – tatuajes</p></div>
-  <div class="avatar"><img src="imagen/avatars/carlos-jefe.PNG"><p>Carlos – El jefe</p></div>
-</div>
+    <div class="avatar">
+      <img src="imagen/avatares/actores_paula_influencer.PNG" alt="Paula – influencer">
+      <p>Paula – influencer</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_triana_influencer.PNG" alt="Triana – influencer">
+      <p>Triana – influencer</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/Actores_sonia_influencer.jpg" alt="Sonia – influencer">
+      <p>Sonia – influencer</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_sara_playa.jpg" alt="Sara – playa">
+      <p>Sara – playa</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_manuel_seductor.PNG" alt="Manuel – seductor">
+      <p>Manuel – seductor</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_marina_pantera.jpg" alt="Marina – pantera">
+      <p>Marina – pantera</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_marcos_influencer.jpg" alt="Marcos – influencer">
+      <p>Marcos – influencer</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_miriam_18anos.PNG" alt="Miriam – 18 años">
+      <p>Miriam – 18 años</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_german_calvo_simpatico_influencer.PNG" alt="Germán – influencer">
+      <p>Germán – influencer</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_kevin_influencer.jpg" alt="Kevin – influencer">
+      <p>Kevin – influencer</p>
+    </div>
+  </div>
+
+  <!-- PODCAST -->
+  <h2>Podcast</h2>
+  <div class="grid">
+    <div class="avatar">
+      <img src="imagen/avatares/actores_laura_podcast_18anos.PNG" alt="Laura – podcast">
+      <p>Laura – podcast (18 años)</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_maria_guapa_simpatica_podcast.PNG" alt="María – podcast">
+      <p>María – podcast simpática</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_nicolas.chico.joven.podcast.PNG" alt="Nicolás – podcast">
+      <p>Nicolás – joven (podcast)</p>
+    </div>
+  </div>
+
+  <!-- PERIODISTAS -->
+  <h2>Periodistas</h2>
+  <div class="grid">
+    <div class="avatar">
+      <img src="imagen/avatares/actores_sonsoles_periodistas.PNG" alt="Sonsoles – periodista">
+      <p>Sonsoles – periodista</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_ana_periodista.PNG" alt="Ana – periodista">
+      <p>Ana – periodista</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_isabel_periodista.PNG" alt="Isabel – periodista">
+      <p>Isabel – periodista</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_eduardo-periodista.jpg" alt="Eduardo – periodista">
+      <p>Eduardo – periodista</p>
+    </div>
+  </div>
+
+  <!-- PERSONAJES -->
+  <h2>Personajes</h2>
+  <div class="grid">
+    <div class="avatar">
+      <img src="imagen/avatares/actores_luna_30anos_elegante.PNG" alt="Luna – elegante">
+      <p>Luna – elegante (30 años)</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_mario_18anos.PNG" alt="Mario – 18 años">
+      <p>Mario – 18 años</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_irene_mujer_morena_58anos.PNG" alt="Irene – morena (58 años)">
+      <p>Irene – morena (58 años)</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_morena_oficina_seductora.PNG" alt="Morena – oficina">
+      <p>Morena – oficina</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_edurne_rubia_simpatica.PNG" alt="Edurne – rubia simpática">
+      <p>Edurne – rubia simpática</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_diego_playa.jpg" alt="Diego – playa">
+      <p>Diego – playa</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/actores_sergio_tatuajes_atractivo.PNG" alt="Sergio – tatuajes">
+      <p>Sergio – tatuajes atractivo</p>
+    </div>
+
+    <div class="avatar">
+      <img src="imagen/avatares/carlos-jefe.PNG" alt="Carlos – El jefe">
+      <p>Carlos – El jefe</p>
+    </div>
+
+    <!-- si quieres repetir Luna, la ruta ya está preparada -->
+    <div class="avatar">
+      <img src="imagen/avatares/actores_luna_30anos_elegante.PNG" alt="Luna – elegante (30 años)">
+      <p>Luna – elegante (30 años)</p>
+    </div>
+  </div>
 
 </div>
 
@@ -153,4 +285,4 @@ function entrar(){
 </script>
 
 </body>
-</html>p
+</html>
