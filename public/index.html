@@ -76,6 +76,19 @@ h2{
   text-align:center;
   background:rgba(0,0,0,.7);
 }
+  <style>
+.avatar {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.avatar.selected {
+  outline: 3px solid #fff;
+}
+
+.avatar.not-selected {
+  opacity: 0.4;
+}
 </style>
 </head>
 
@@ -110,7 +123,7 @@ h2{
   <img src="img/avatares/actores_sergio_tatuajes_atractivo.PNG" alt="Sergio – tatuajes">
   <p>Sergio – tatuajes</p>
 </div>
-  <div class="avatar">
+  <div class="avatar" onclick="selectAvatar(this, 'actores_triana_influencer.PNG')">
   <img src="img/avatares/actores_triana_influencer.PNG" alt="Triana – influencer">
   <p>Triana – influencer</p>
 </div>
@@ -158,6 +171,27 @@ h2{
 function entrar(){
   document.getElementById("intro").style.display="none";
   document.getElementById("app").style.display="block";
+}
+  <script>
+let selectedAvatar = null;
+
+function entrar(){
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
+
+function selectAvatar(element, avatarName){
+  selectedAvatar = avatarName;
+
+  document.querySelectorAll('.avatar').forEach(a => {
+    a.classList.remove('selected');
+    a.classList.add('not-selected');
+  });
+
+  element.classList.add('selected');
+  element.classList.remove('not-selected');
+
+  console.log("Avatar seleccionado:", selectedAvatar);
 }
 </script>
 
