@@ -7,6 +7,7 @@
 
 <style>
 *{box-sizing:border-box;}
+
 body{
   margin:0;
   background:#000;
@@ -14,34 +15,36 @@ body{
   font-family:Arial, Helvetica, sans-serif;
 }
 
-/* ===== VIDEO INTRO ===== */
+/* ================= VIDEO INTRO ================= */
 #intro{
   position:fixed;
   inset:0;
   z-index:10;
-  overflow:hidden;
+  background:#000;
 }
+
 #intro video{
   width:100%;
   height:100%;
   object-fit:cover;
 }
+
 #intro button{
   position:absolute;
-  bottom:60px;
+  bottom:50px;
   left:50%;
   transform:translateX(-50%);
   padding:14px 34px;
   font-size:18px;
+  border:2px solid #fff;
   background:rgba(0,0,0,.6);
   color:#fff;
-  border:2px solid #fff;
 }
 
-/* ===== APP ===== */
+/* ================= APP ================= */
 #app{
   display:none;
-  padding-bottom:60px;
+  padding-bottom:100px;
 }
 
 h2{
@@ -49,7 +52,7 @@ h2{
   font-size:22px;
 }
 
-/* ===== GRID ===== */
+/* ================= GRID ================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -57,11 +60,13 @@ h2{
   padding:10px;
 }
 
+/* ================= AVATAR ================= */
 .avatar{
   background:#111;
   border-radius:16px;
   overflow:hidden;
   cursor:pointer;
+  transition:0.2s;
 }
 
 .avatar img{
@@ -76,57 +81,145 @@ h2{
   padding:12px;
   text-align:center;
   background:rgba(0,0,0,.75);
+  font-size:14px;
+}
+
+.avatar.selected{
+  outline:3px solid #fff;
+}
+
+.avatar.not-selected{
+  opacity:0.4;
+}
+
+/* ================= BOTÓN CONTINUAR ================= */
+#btnContinuar{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:14px 28px;
+  font-size:18px;
+  border:2px solid #fff;
+  background:#000;
+  color:#fff;
+  opacity:.4;
+  z-index:20;
+}
+
+#btnContinuar.activo{
+  opacity:1;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== INTRO ===== -->
+<!-- ================= INTRO ================= -->
 <div id="intro">
   <video autoplay muted loop playsinline>
-    <source src="video/Video_inicio_cuti.MP4" type="video/mp4">
+    <source src="/video/Video_inicio_cuti.MP4" type="video/mp4">
   </video>
   <button onclick="entrar()">Entrar</button>
 </div>
 
-<!-- ===== APP ===== -->
+<!-- ================= APP ================= -->
 <div id="app">
 
 <h2>Influencers</h2>
 <div class="grid">
-  <div class="avatar"><img src="img/avatares/actores_triana_influencer.PNG"><p>Triana – influencer</p></div>
+  <div class="avatar" onclick="seleccionar(this,'Triana')">
+    <img src="/img/avatares/actores_triana_influencer.PNG">
+    <p>Triana – influencer</p>
+  </div>
 </div>
 
 <h2>Personajes</h2>
 <div class="grid">
-  <div class="avatar"><img src="img/avatares/carlos-jefe.PNG"><p>Carlos – El jefe</p></div>
-  <div class="avatar"><img src="img/avatares/actores_mario_18anos.PNG"><p>Mario – 18 años</p></div>
-  <div class="avatar"><img src="img/avatares/actores_miriam_18anos.PNG"><p>Miriam – 18 años</p></div>
-  <div class="avatar"><img src="img/avatares/actores_sergio_tatuajes_atractivo.PNG"><p>Sergio – tatuajes</p></div>
+  <div class="avatar" onclick="seleccionar(this,'Carlos')">
+    <img src="/img/avatares/carlos-jefe.PNG">
+    <p>Carlos – El jefe</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'Mario')">
+    <img src="/img/avatares/actores_mario_18anos.PNG">
+    <p>Mario – 18 años</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'Miriam')">
+    <img src="/img/avatares/actores_miriam_18anos.PNG">
+    <p>Miriam – 18 años</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'Sergio')">
+    <img src="/img/avatares/actores_sergio_tatuajes_atractivo.PNG">
+    <p>Sergio – tatuajes</p>
+  </div>
 </div>
 
 <h2>Podcast</h2>
 <div class="grid">
-  <div class="avatar"><img src="img/avatares/actores_laura_podcast_18anos.PNG"><p>Laura – podcast</p></div>
-  <div class="avatar"><img src="img/avatares/actores_maria_guapa_simpatica_podcast.PNG"><p>María – podcast</p></div>
-  <div class="avatar"><img src="img/avatares/actores_nicolas.chico.joven.podcast.PNG"><p>Nicolás – podcast</p></div>
+  <div class="avatar" onclick="seleccionar(this,'Laura')">
+    <img src="/img/avatares/actores_laura_podcast_18anos.PNG">
+    <p>Laura – podcast</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'María')">
+    <img src="/img/avatares/actores_maria_guapa_simpatica_podcast.PNG">
+    <p>María – podcast</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'Nicolás')">
+    <img src="/img/avatares/actores_nicolas.chico.joven.podcast.PNG">
+    <p>Nicolás – podcast</p>
+  </div>
 </div>
 
 <h2>Periodistas</h2>
 <div class="grid">
-  <div class="avatar"><img src="img/avatares/actores_ana_periodista.PNG"><p>Ana – periodista</p></div>
-  <div class="avatar"><img src="img/avatares/actores_eduardo-periodista.jpg"><p>Eduardo – periodista</p></div>
-  <div class="avatar"><img src="img/avatares/actores_isabel_periodista.PNG"><p>Isabel – periodista</p></div>
-  <div class="avatar"><img src="img/avatares/actores_sonsoles_periodistas.PNG"><p>Sonsoles – periodista</p></div>
+  <div class="avatar" onclick="seleccionar(this,'Ana')">
+    <img src="/img/avatares/actores_ana_periodista.PNG">
+    <p>Ana – periodista</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'Eduardo')">
+    <img src="/img/avatares/actores_eduardo-periodista.jpg">
+    <p>Eduardo – periodista</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'Isabel')">
+    <img src="/img/avatares/actores_isabel_periodista.PNG">
+    <p>Isabel – periodista</p>
+  </div>
+  <div class="avatar" onclick="seleccionar(this,'Sonsoles')">
+    <img src="/img/avatares/actores_sonsoles_periodistas.PNG">
+    <p>Sonsoles – periodista</p>
+  </div>
 </div>
 
 </div>
+
+<button id="btnContinuar" onclick="continuar()" disabled>Elegir avatar</button>
 
 <script>
+let avatarElegido = null;
+
 function entrar(){
   document.getElementById("intro").style.display="none";
   document.getElementById("app").style.display="block";
+}
+
+function seleccionar(elemento,nombre){
+  avatarElegido = nombre;
+
+  document.querySelectorAll('.avatar').forEach(a=>{
+    a.classList.remove('selected');
+    a.classList.add('not-selected');
+  });
+
+  elemento.classList.add('selected');
+  elemento.classList.remove('not-selected');
+
+  const btn = document.getElementById('btnContinuar');
+  btn.disabled = false;
+  btn.classList.add('activo');
+}
+
+function continuar(){
+  alert("Avatar elegido: " + avatarElegido);
 }
 </script>
 
