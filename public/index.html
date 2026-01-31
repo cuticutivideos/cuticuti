@@ -1,92 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>CUTICUTI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>CUTICUTI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+}
 
-    h2 {
-      margin: 25px 10px 10px;
-      font-size: 22px;
-    }
+h2{
+  margin:25px 10px 10px;
+  font-size:22px;
+}
 
-    /* VIDEO INTRO AJUSTADO A PANTALLA */
-    .video {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      z-index: 10;
-      overflow: hidden;
-    }
+/* VIDEO INTRO */
+.video{
+  position:fixed;
+  inset:0;
+  background:#000;
+  z-index:10;
+  overflow:hidden;
+}
 
-    .video video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-    }
+.video video{
+  position:absolute;
+  top:50%;
+  left:50%;
+  min-width:100%;
+  min-height:100%;
+  width:auto;
+  height:auto;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+}
 
-    .boton {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 14px 30px;
-      border: 2px solid #fff;
-      background: rgba(0,0,0,.6);
-      color: #fff;
-      font-size: 18px;
-      cursor: pointer;
-      z-index: 20;
-    }
+.boton{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:14px 30px;
+  border:2px solid #fff;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+  z-index:20;
+}
 
-    .app {
-      display: none;
-      padding-bottom: 40px;
-    }
+.app{
+  display:none;
+  padding-bottom:40px;
+}
 
-    /* GRID SIEMPRE 2 COLUMNAS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      padding: 10px;
-    }
+/* GRID 2 COLUMNAS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  padding:10px;
+}
 
-    .avatar {
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-      text-align: center;
-    }
+.avatar{
+  background:#111;
+  border-radius:12px;
+  overflow:hidden;
+  text-align:center;
+}
 
-    .avatar img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-    }
+.avatar img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
 
-    .avatar p {
-      margin: 0;
-      padding: 10px;
-      background: rgba(0,0,0,.7);
-      font-size: 14px;
-    }
-  </style>
+.avatar p{
+  margin:0;
+  padding:10px;
+  background:rgba(0,0,0,.7);
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
@@ -102,85 +101,42 @@
 <!-- APP -->
 <div class="app" id="app">
 
-  <h2>Elige tu actor IA</h2>
+<h2>Influencers</h2>
+<div class="grid">
+  <div class="avatar"><img src="img/avatares/actores_marcos_influencer.jpg"><p>Marcos – influencer</p></div>
+  <div class="avatar"><img src="img/avatares/actores_kevin_influencer.jpg"><p>Kevin – influencer</p></div>
+  <div class="avatar"><img src="img/avatares/Actores_sonia_influencer.jpg"><p>Sonia – influencer</p></div>
+  <div class="avatar"><img src="img/avatares/actores_german_calvo_simpatico_influencer.PNG"><p>Germán – influencer</p></div>
+</div>
 
-  <!-- INFLUENCERS -->
-  <h2>Influencers</h2>
-  <div class="grid">
+<h2>Podcast</h2>
+<div class="grid">
+  <div class="avatar"><img src="img/avatares/actores_laura_podcast_18anos.PNG"><p>Laura – podcast</p></div>
+  <div class="avatar"><img src="img/avatares/actores_maria_guapa_simpatica_podcast.PNG"><p>María – podcast</p></div>
+  <div class="avatar"><img src="img/avatares/actores_nicolas.chico.joven.podcast.PNG"><p>Nicolás – podcast</p></div>
+</div>
 
-    <div class="avatar">
-      <img src="img/avatares/Actores_sebastian_playa.jpg">
-      <p>Sebastián – playa</p>
-    </div>
+<h2>Periodistas</h2>
+<div class="grid">
+  <div class="avatar"><img src="img/avatares/actores_ana_periodista.PNG"><p>Ana – periodista</p></div>
+  <div class="avatar"><img src="img/avatares/actores_isabel_periodista.PNG"><p>Isabel – periodista</p></div>
+  <div class="avatar"><img src="img/avatares/actores_eduardo-periodista.jpg"><p>Eduardo – periodista</p></div>
+</div>
 
-    <div class="avatar">
-      <img src="img/avatares/actores_monica_influencer.PNG">
-      <p>Mónica – influencer</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_teresa_influencer.PNG">
-      <p>Teresa – influencer</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_paula_influencer.PNG">
-      <p>Paula – influencer</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_triana_influencer.PNG">
-      <p>Triana – influencer</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/Actores_sonia_influencer.jpg">
-      <p>Sonia – influencer</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_sara_playa.jpg">
-      <p>Sara – playa</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_manuel_seductor.PNG">
-      <p>Manuel – seductor</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_marina_pantera.jpg">
-      <p>Marina – pantera</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_marcos_influencer.jpg">
-      <p>Marcos – influencer</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_miriam_18anos.PNG">
-      <p>Miriam – 18 años</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_german_calvo_simpatico_influencer.PNG">
-      <p>Germán – influencer</p>
-    </div>
-
-    <div class="avatar">
-      <img src="img/avatares/actores_kevin_influencer.jpg">
-      <p>Kevin – influencer</p>
-    </div>
-
-  </div>
+<h2>Personajes</h2>
+<div class="grid">
+  <div class="avatar"><img src="img/avatares/carlos-jefe.PNG"><p>Carlos – El jefe</p></div>
+  <div class="avatar"><img src="img/avatares/actores_mario_18anos.PNG"><p>Mario – 18 años</p></div>
+  <div class="avatar"><img src="img/avatares/actores_miriam_18anos.PNG"><p>Miriam – 18 años</p></div>
+  <div class="avatar"><img src="img/avatares/actores_sergio_tatuajes_atractivo.PNG"><p>Sergio – tatuajes</p></div>
+</div>
 
 </div>
 
 <script>
 function entrar(){
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("app").style.display = "block";
+  document.getElementById("intro").style.display="none";
+  document.getElementById("app").style.display="block";
 }
 </script>
 
