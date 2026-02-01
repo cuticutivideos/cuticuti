@@ -225,51 +225,77 @@ h2{
   <button onclick="volver()">Cambiar avatar</button>
 </div>
 <!-- AVATAR FINAL -->
-<img id="avatarFinalImg" style="
-  width:180px;
-  height:180px;
-  object-fit:cover;
-  border-radius:50%;
-  margin:20px auto;
-  display:block;
-">
+<!-- ===== AVATAR FINAL ===== -->
+<div id="siguientePaso" style="display:none; text-align:center; padding-top:60px;">
+  
+  <h2>Tu avatar está listo</h2>
+  <p>Aquí irá el vídeo / texto / voz</p>
 
-<p id="avatarFinalNombre" style="
-  font-size:20px;
-  opacity:0.8;
-  text-align:center;
-"></p>
+  <img id="avatarFinalImg" style="
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    margin:20px auto;
+    display:block;
+  ">
+
+  <p id="avatarFinalNombre" style="
+    font-size:20px;
+    opacity:0.8;
+    text-align:center;
+  "></p>
+
+  <button onclick="volver()" style="
+    margin-top:20px;
+    padding:14px 36px;
+    font-size:18px;
+    border-radius:14px;
+    border:2px solid #fff;
+    background:rgba(0,0,0,0.6);
+    color:#fff;
+  ">
+    Cambiar avatar
+  </button>
+
+</div>
+
 <script>
 let avatarElegido = "";
-  let avatarImgElegida = "";
+let avatarImgElegida = "";
 
 function entrarApp(){
-  document.getElementById("intro").style.display="none";
-  document.getElementById("app").style.display="block";
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("app").style.display = "block";
 }
 
 function seleccionar(el, nombre){
   avatarElegido = nombre;
-
   avatarImgElegida = el.querySelector("img").src;
+
   document.querySelectorAll(".avatar").forEach(a=>{
     a.classList.remove("selected");
     a.classList.add("not-selected");
   });
+
   el.classList.add("selected");
   el.classList.remove("not-selected");
-  document.getElementById("btnContinuar").style.display="block";
+
+  document.getElementById("btnContinuar").style.display = "block";
 }
 
 function continuar(){
-  document.getElementById("app").style.display="none";
-  document.getElementById("btnContinuar").style.display="none";
-  document.getElementById("siguientePaso").style.display="block";
+  document.getElementById("app").style.display = "none";
+  document.getElementById("btnContinuar").style.display = "none";
+  document.getElementById("siguientePaso").style.display = "block";
+
+  document.getElementById("avatarFinalImg").src = avatarImgElegida;
+  document.getElementById("avatarFinalNombre").innerText = avatarElegido;
 }
 
 function volver(){
-  document.getElementById("siguientePaso").style.display="none";
-  document.getElementById("app").style.display="block";
+  document.getElementById("siguientePaso").style.display = "none";
+  document.getElementById("app").style.display = "block";
 }
 </script>
 
