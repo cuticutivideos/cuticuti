@@ -210,19 +210,14 @@ function entrar(){
   document.getElementById("btnContinuar").style.display="block";
 }
 
-function seleccionar(el,nombre){
-  avatarElegido = nombre;
+function continuar(){
+  if(!avatarElegido){
+    alert("Elige un avatar primero");
+    return;
+  }
 
-  document.querySelectorAll('.avatar').forEach(a=>{
-    a.classList.remove('selected');
-    a.classList.add('not-selected');
-  });
-
-  el.classList.add('selected');
-  el.classList.remove('not-selected');
-
-  const btn = document.getElementById("btnContinuar");
-  btn.classList.add('activo');
+  document.getElementById("app").style.display = "none";
+  document.getElementById("siguientePaso").style.display = "block";
 }
 
 function continuar(){
