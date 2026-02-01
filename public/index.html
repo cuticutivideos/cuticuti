@@ -210,25 +210,27 @@ h2{
 
 <button id="btnContinuar" onclick="continuar()">Elegir avatar</button>
 
-<!-- ===== SIGUIENTE PASO ===== -->
-<div id="siguientePaso">
-  <h2>Tu avatar está listo</h2>
-  <p>Aquí irá el vídeo / texto / voz</p>
-  <img id="avatarFinal"
-     src=""
-     style="
-       width:220px;
-       border-radius:20px;
-       margin:30px auto;
-       display:none;
-     ">
-  <button onclick="volver()">Cambiar avatar</button>
-</div>
+
 <!-- ===== AVATAR FINAL ===== -->
 <div id="siguientePaso" style="display:none; text-align:center; padding-top:40px;">
 
   <h2>Tu avatar está listo</h2>
   <p>Aquí irá el vídeo / texto / voz</p>
+  <video
+  id="videoAvatar"
+  controls
+  playsinline
+  style="
+    width:90%;
+    max-width:420px;
+    border-radius:16px;
+    margin:20px auto;
+    display:block;
+  "
+>
+  <source src="/videos/demo.mp4" type="video/mp4">
+  Tu navegador no soporta vídeo.
+</video>
 
   <img id="avatarFinalImg" 
        style="
