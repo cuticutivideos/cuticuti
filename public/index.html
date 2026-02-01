@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>CUTICUTI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUTICUTI</title>
 
 <style>
+/* ===== RESET ===== */
 *{box-sizing:border-box;}
 body{
   margin:0;
@@ -15,53 +16,41 @@ body{
 }
 
 /* ===== VIDEO INTRO ===== */
-#
-/* ===== APP ===== */
-#app{
-  display:none;
-  padding-bottom:100px;
-}
-  <h2>Tu avatar está listo</h2>
-  <p>Aquí irá el vídeo / texto / voz</p>
-
-  <button onclick="volverAvatares()">Cambiar avatar</button>
-</div>
-  display:none;
-  padding-bottom:100px;
-}
-/* ====== VIDEO INTRO ====== */
-/* ====== VIDEO INTRO ====== */
 #intro{
   position:fixed;
   inset:0;
-  background:#000;
   z-index:50;
+  background:#000;
 }
-
 #intro video{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-
 #intro button{
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%, -50%);
+  transform:translate(-50%,-50%);
   padding:22px 60px;
   font-size:26px;
   font-weight:700;
   border-radius:16px;
   border:2px solid #fff;
-  background:rgba(0,0,0,.6);
+  background:rgba(0,0,0,.65);
   color:#fff;
-  z-index:60;
+  backdrop-filter:blur(6px);
+  cursor:pointer;
 }
+
+/* ===== APP ===== */
+#app{
+  display:none;
+  padding-bottom:120px;
 }
+
 h2{
-  margin:30px 15px 10px;
-  font-size:22px;
+  margin:30px 15px 15px;
 }
 
 /* ===== GRID ===== */
@@ -97,29 +86,40 @@ h2{
   outline:3px solid #fff;
 }
 .avatar.not-selected{
-  opacity:0.4;
+  opacity:.4;
 }
 
 /* ===== BOTÓN CONTINUAR ===== */
 #btnContinuar{
-  display:block;
+  display:none;
   position:fixed;
   top:65%;
   left:50%;
-  transform:translate(-50%, -50%);
+  transform:translate(-50%,-50%);
   padding:18px 46px;
   font-size:22px;
   font-weight:600;
   border-radius:14px;
   border:2px solid #fff;
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,.65);
   color:#fff;
   z-index:20;
-  backdrop-filter: blur(6px);
 }
+
+/* ===== SIGUIENTE PASO ===== */
+#siguientePaso{
+  display:none;
+  padding:40px 20px;
+  text-align:center;
 }
-#btnContinuar.activo{
-  opacity:1;
+#siguientePaso button{
+  margin-top:20px;
+  padding:14px 32px;
+  font-size:18px;
+  border-radius:12px;
+  border:2px solid #fff;
+  background:#000;
+  color:#fff;
 }
 </style>
 </head>
@@ -127,106 +127,124 @@ h2{
 <body>
 
 <!-- ===== INTRO ===== -->
-    <div id="intro">
+<div id="intro">
   <video autoplay muted loop playsinline>
     <source src="public/video_inicio_cuti.MP4" type="video/mp4">
   </video>
-
   <button onclick="entrarApp()">Entrar</button>
 </div>
 
 <!-- ===== APP ===== -->
 <div id="app">
 
-<h2>Personajes</h2>
-<div class="grid">
-  <div class="avatar" onclick="seleccionar(this,'Carlos')">
-    <img src="img/avatares/carlos-jefe.PNG">
-    <p>Carlos – El jefe</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'Mario')">
-    <img src="img/avatares/actores_mario_18anos.PNG">
-    <p>Mario – 18 años</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'Miriam')">
-    <img src="img/avatares/actores_miriam_18anos.PNG">
-    <p>Miriam – 18 años</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'Sergio')">
-    <img src="img/avatares/actores_sergio_tatuajes_atractivo.PNG">
-    <p>Sergio – tatuajes</p>
-  </div>
-</div>
+  <h2>Personajes</h2>
 
-<h2>Influencers</h2>
-<div class="grid">
-  <div class="avatar" onclick="seleccionar(this,'Triana')">
-    <img src="img/avatares/actores_triana_influencer.PNG">
-    <p>Triana – influencer</p>
-  </div>
-</div>
+  <div class="grid">
+    <div class="avatar" onclick="seleccionar(this,'Carlos – El jefe')">
+      <img src="public/img/avatares/carlos-jefe.PNG">
+      <p>Carlos – El jefe</p>
+    </div>
 
-<h2>Podcast</h2>
-<div class="grid">
-  <div class="avatar" onclick="seleccionar(this,'Laura')">
-    <img src="img/avatares/actores_laura_podcast_18anos.PNG">
-    <p>Laura – podcast</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'María')">
-    <img src="img/avatares/actores_maria_guapa_simpatica_podcast.PNG">
-    <p>María – podcast</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'Nicolás')">
-    <img src="img/avatares/actores_nicolas.chico.joven.podcast.PNG">
-    <p>Nicolás – podcast</p>
-  </div>
-</div>
+    <div class="avatar" onclick="seleccionar(this,'Mario – 18 años')">
+      <img src="public/img/avatares/actores_mario_18anos.PNG">
+      <p>Mario – 18 años</p>
+    </div>
 
-<h2>Periodistas</h2>
-<div class="grid">
-  <div class="avatar" onclick="seleccionar(this,'Ana')">
-    <img src="img/avatares/actores_ana_periodista.PNG">
-    <p>Ana – periodista</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'Eduardo')">
-    <img src="img/avatares/actores_eduardo-periodista.jpg">
-    <p>Eduardo – periodista</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'Isabel')">
-    <img src="img/avatares/actores_isabel_periodista.PNG">
-    <p>Isabel – periodista</p>
-  </div>
-  <div class="avatar" onclick="seleccionar(this,'Sonsoles')">
-    <img src="img/avatares/actores_sonsoles_periodistas.PNG">
-    <p>Sonsoles – periodista</p>
-  </div>
-</div>
+    <div class="avatar" onclick="seleccionar(this,'Miriam – 18 años')">
+      <img src="public/img/avatares/actores_miriam_18anos.PNG">
+      <p>Miriam – 18 años</p>
+    </div>
 
+    <div class="avatar" onclick="seleccionar(this,'Sergio – tatuajes')">
+      <img src="public/img/avatares/actores_sergio_tatuajes_atractivo.PNG">
+      <p>Sergio – tatuajes</p>
+    </div>
+
+    <div class="avatar" onclick="seleccionar(this,'Triana – influencer')">
+      <img src="public/img/avatares/actores_triana_influencer.PNG">
+      <p>Triana – influencer</p>
+    </div>
+  </div>
+
+  <h2>Podcast</h2>
+  <div class="grid">
+    <div class="avatar" onclick="seleccionar(this,'Laura – podcast')">
+      <img src="public/img/avatares/actores_laura_podcast_18anos.PNG">
+      <p>Laura – podcast</p>
+    </div>
+
+    <div class="avatar" onclick="seleccionar(this,'María – podcast')">
+      <img src="public/img/avatares/actores_maria_guapa_simpatica_podcast.PNG">
+      <p>María – podcast</p>
+    </div>
+
+    <div class="avatar" onclick="seleccionar(this,'Nicolás – podcast')">
+      <img src="public/img/avatares/actores_nicolas.chico.joven.podcast.PNG">
+      <p>Nicolás – podcast</p>
+    </div>
+  </div>
+
+  <h2>Periodistas</h2>
+  <div class="grid">
+    <div class="avatar" onclick="seleccionar(this,'Ana – periodista')">
+      <img src="public/img/avatares/actores_ana_periodista.PNG">
+      <p>Ana – periodista</p>
+    </div>
+
+    <div class="avatar" onclick="seleccionar(this,'Eduardo – periodista')">
+      <img src="public/img/avatares/actores_eduardo-periodista.jpg">
+      <p>Eduardo – periodista</p>
+    </div>
+
+    <div class="avatar" onclick="seleccionar(this,'Isabel – periodista')">
+      <img src="public/img/avatares/actores_isabel_periodista.PNG">
+      <p>Isabel – periodista</p>
+    </div>
+
+    <div class="avatar" onclick="seleccionar(this,'Sonsoles – periodista')">
+      <img src="public/img/avatares/actores_sonsoles_periodistas.PNG">
+      <p>Sonsoles – periodista</p>
+    </div>
+  </div>
 </div>
 
 <button id="btnContinuar" onclick="continuar()">Elegir avatar</button>
 
-<script>
-let avatarElegido = null;
+<!-- ===== SIGUIENTE PASO ===== -->
+<div id="siguientePaso">
+  <h2>Tu avatar está listo</h2>
+  <p>Aquí irá el vídeo / texto / voz</p>
+  <button onclick="volver()">Cambiar avatar</button>
+</div>
 
-function entrar(){
+<script>
+let avatarElegido = "";
+
+function entrarApp(){
   document.getElementById("intro").style.display="none";
   document.getElementById("app").style.display="block";
+}
+
+function seleccionar(el,nombre){
+  avatarElegido = nombre;
+  document.querySelectorAll(".avatar").forEach(a=>{
+    a.classList.remove("selected");
+    a.classList.add("not-selected");
+  });
+  el.classList.add("selected");
+  el.classList.remove("not-selected");
   document.getElementById("btnContinuar").style.display="block";
 }
 
 function continuar(){
-  if(!avatarElegido){
-    alert("Elige un avatar primero");
-    return;
-  }
-
-  document.getElementById("app").style.display = "none";
-  document.getElementById("siguientePaso").style.display = "block";
+  document.getElementById("app").style.display="none";
+  document.getElementById("btnContinuar").style.display="none";
+  document.getElementById("siguientePaso").style.display="block";
 }
 
-function continuar(){
-  alert("Avatar elegido: " + avatarElegido);
+function volver(){
+  document.getElementById("siguientePaso").style.display="none";
+  document.getElementById("app").style.display="block";
 }
 </script>
 
