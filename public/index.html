@@ -87,17 +87,21 @@ h2{
 
 /* ===== BOTÓN CONTINUAR ===== */
 #btnContinuar{
-  display:none;
+  display:block;
   position:fixed;
-  bottom:120px;
+  top:65%;
   left:50%;
-  transform:translateX(-50%);
-  padding:14px 30px;
-  font-size:18px;
+  transform:translate(-50%, -50%);
+  padding:18px 46px;
+  font-size:22px;
+  font-weight:600;
+  border-radius:14px;
   border:2px solid #fff;
-  background:#000;
+  background:rgba(0,0,0,0.65);
   color:#fff;
-  opacity:.4;
+  z-index:20;
+  backdrop-filter: blur(6px);
+}
 }
 #btnContinuar.activo{
   opacity:1;
