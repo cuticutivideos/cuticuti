@@ -248,8 +248,10 @@ function entrarApp(){
   document.getElementById("app").style.display="block";
 }
 
-function seleccionar(el,nombre){
+function seleccionar(el, nombre){
   avatarElegido = nombre;
+
+  avatarImgElegida = el.querySelector("img").src;
   document.querySelectorAll(".avatar").forEach(a=>{
     a.classList.remove("selected");
     a.classList.add("not-selected");
