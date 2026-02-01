@@ -125,10 +125,13 @@ h2{
 <body>
 
 <!-- ===== INTRO ===== -->
-    <video autoplay muted loop playsinline>
-  <source src="/video_inicio_cuti.MP4" type="video/mp4">
-</video>
-  <button id="btnEntrar">Entrar</button>
+    <div id="intro">
+  <video autoplay muted loop playsinline>
+    <source src="public/video_inicio_cuti.MP4" type="video/mp4">
+  </video>
+
+  <button id="btnEntrar" onclick="entrarApp()">Entrar</button>
+</div>
 
 <!-- ===== APP ===== -->
 <div id="app">
