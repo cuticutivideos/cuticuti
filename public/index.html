@@ -301,6 +301,9 @@ function continuar(){
   document.getElementById("btnContinuar").style.display = "none";
   document.getElementById("siguientePaso").style.display = "block";
 const video = document.getElementById("videoAvatar");
+  video.src = "/demo.MP4";
+video.load();
+video.play();
 video.src = "/video/" + avatarElegido + ".mp4";
 video.load();
   document.getElementById("avatarFinalImg").src = avatarImgElegida;
