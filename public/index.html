@@ -54,31 +54,46 @@ h2{
 }
 
 /* ===== GRID ===== */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-  padding:10px;
+/* ===== TOOLS GRID (IMPRESSO STYLE) ===== */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: 20px;
 }
 
-/* ===== AVATAR ===== */
-.avatar{
-  background:#111;
-  border-radius:14px;
-  overflow:hidden;
-  cursor:pointer;
+.tool-card {
+  background: #111;
+  border-radius: 18px;
+  padding: 14px;
 }
-.avatar img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  display:block;
+
+.tool-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 10px;
 }
-.avatar p{
-  margin:0;
-  padding:10px;
-  text-align:center;
-  background:rgba(0,0,0,.7);
+
+.tool-card h3 {
+  margin: 6px 0 4px;
+}
+
+.tool-card p {
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.tool-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
 }
 
 /* ===== SELECCIÓN ===== */
