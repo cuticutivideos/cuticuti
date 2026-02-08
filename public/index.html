@@ -361,7 +361,24 @@ function seleccionar(el, nombre){
 
   document.getElementById("btnContinuar").style.display = "block";
 }
+function abrirTool(tipo) {
+  document.getElementById("tools").style.display = "none";
 
+  if (tipo === "imagenes") {
+    document.getElementById("tool-imagenes").style.display = "block";
+  }
+
+  if (tipo === "video") {
+    document.getElementById("tool-video").style.display = "block";
+  }
+
+  if (tipo === "influencers") {
+    document.getElementById("tool-influencers").style.display = "block";
+  }
+
+  if (tipo === "fondo") {
+    document.getElementById("tool-fondo").style.display = "block";
+  }
 function continuar(){
   document.getElementById("app").style.display = "none";
   document.getElementById("btnContinuar").style.display = "none";
